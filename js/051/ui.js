@@ -40,7 +40,7 @@ APP.appUI_cl = Class.create({
    },
    createEventHandler_p: function () {
 	    /* Ereignisbehandlung einrichten */
-	    this.element_o.on('click', this.onClick_p.bind(this));
+	    this.element_o.on('click','button', this.onClick_p.bind(this));
    },
    render_px: function (data_opl) {
 	    var markup_s = APP.tm_o.execute_px(this.template_s, null);
@@ -49,10 +49,16 @@ APP.appUI_cl = Class.create({
       this.createEventHandler_p();
  
    },
-   onclick_p: function(event_opl){
-    APP.es_o.publish_px('app.action', 'quit');
-
-
+   onClick_p: function(event_opl){
+      var action = $(event_opl.target).attr("data-action");
+      switch(action){
+        case 'add':
+          alert("button1");
+          break;
+        case 'delete':
+          alert("button2");
+          break;
+      }
    }
 
 

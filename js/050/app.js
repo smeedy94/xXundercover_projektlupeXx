@@ -60,6 +60,7 @@ APP.Application_cl = Class.create({
 debugger
       switch (message_spl) {
       case 'app.action':
+         console.log(data_apl);
          if (data_apl[0] == 'quit') {
             // direkt vollständig beenden
             if (self_opl.appClose_p != null) {
