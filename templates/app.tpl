@@ -1,13 +1,25 @@
+	<div class="uk-block uk-block-primary uk-block" id="header">
+		<div class="uk-grid uk-grid-width-1-3">
+			<div class="uk-button-group uk-margin-remove">
+				
+			</div>
+			
+			<div class="uk-button-group uk-align-center uk-margin-remove">
+				<button class="material-icons" data-action="out">zoom_out</button>
+				<button class="material-icons" data-action="in">zoom_in</button>
+			</div>
 
 
-<div class="uk-grid">
-	<div class="uk-width-2-10" style="background-color: ##BCD2EE">
+			<div class="uk-button-group uk-margin-remove">
+				<button class="uk-button uk-button-success" data-action="add">Hinzufügen</button>
+				<button class="uk-button uk-button-success" data-action="edit">Bearbeiten</button>
+				<button class="uk-button uk-button-danger" data-action="delete">Löschen</button>
+			</div>
+		</div>
 	</div>
-<!-- <canvas id="nav_canvas" width="190" height="600"></canvas> -->
-	<div class="uk-width-8-10" style="padding:0">
-		<canvas id="map_canvas" width="1000" height="800"></canvas>
-	</div>
-</div>
 
-<button data-action="add">Hinzufügen</button>
-<button data-action="delete">Hinzufügen</button>
+	<div class="uk-container uk-padding-remove">
+
+		<canvas id="canvas"></canvas>
+	</div>
+

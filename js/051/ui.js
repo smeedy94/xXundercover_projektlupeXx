@@ -47,16 +47,37 @@ APP.appUI_cl = Class.create({
 	    this.element_o = $("body");
 	    this.element_o.html(markup_s);
       this.createEventHandler_p();
- 
+      this.dis_buttons();
+   },
+   dis_buttons: function(){
+      $(".uk-button-group button").each(function(){
+        if($(this).attr("data-action") == "edit" 
+          || $(this).attr("data-action") == "delete")
+        this.disabled = true;
+      });
+   },
+   en_buttons: function(){
+      $(".uk-button-group button").each(function(){
+        this.disabled = false;
+      });
    },
    onClick_p: function(event_opl){
       var action = $(event_opl.target).attr("data-action");
       switch(action){
         case 'add':
-          alert("button1");
+          alert("add");
+          break;
+        case 'edit':
+          alert("edit");
           break;
         case 'delete':
-          alert("button2");
+          alert("delete");
+          break;
+        case 'out':
+          alert("zoomout");
+          break;
+        case 'in':
+          alert("zoomin");
           break;
       }
    }
