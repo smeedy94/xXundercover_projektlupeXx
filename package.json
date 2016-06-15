@@ -1,0 +1,14 @@
+{
+   "name": "Prak3",
+   "description": "Variante 1 mit einfacher Ablaufsteuerung",
+   "version": "0.0.1",
+   "main": "main.html",
+   "window": {
+      "fullscreen": false,
+      "show": false,
+      "width": 1200,
+      "height": 800,
+      "min_width": 800,
+      "min_height": 600
+   }
+}

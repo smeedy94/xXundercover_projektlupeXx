@@ -1,0 +1,13 @@
+{
+   "app":{
+      "instanceName" : "app",
+      "class" : "appUI_cl",
+      "appTemplate" : "app.tpl"
+   }
+
+
+
+
+
+
+}

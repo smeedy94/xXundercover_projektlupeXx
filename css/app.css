@@ -1,0 +1,102 @@
+#idContentContainer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+#idModalContainer {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+#idHeader {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   right: 10px;
+   height: 100px;
+   line-height: 100px;
+}
+
+#idHeader h1 {
+   font-size: 14pt;
+   text-align: center;
+}
+
+#idMain {
+   position: absolute;
+   top: 120px;
+   left: 10px;
+   right: 10px;
+   bottom: 10px;
+}
+
+#idAssignment {
+   height: 500px;
+}
+
+#idAssignControls {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 500px;
+}
+#idAssignControls > div {
+
+}
+
+#idAppointments {
+   height: 500px;
+}
+
+#idDateSelection {
+   height: 50px;
+}
+
+#idAppointmentList {
+   height: 440px;
+}
+
+#idStudents {
+   height: 500px;
+}
+
+#idStudents > div {
+   height: 50px;
+}
+
+#idStudents > table {
+   height: 440px;
+}
+
+/* Scrollbar in tbody, entnommen aus Hinweis bei Stackoverflow */
+
+table {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table thead {
+    /* head takes the height it requires,
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table tbody tr {
+    width: 100%;
+}
+table thead, table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
