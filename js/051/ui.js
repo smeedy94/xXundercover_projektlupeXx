@@ -46,7 +46,7 @@ APP.appUI_cl = Class.create({
 	    var markup_s = APP.tm_o.execute_px(this.template_s, null);
 	    this.element_o = $("body");
 	    this.element_o.html(markup_s);
-    // this.createEventHandler_p();
+      this.createEventHandler_p();
  
    },
    onclick_p: function(event_opl){
