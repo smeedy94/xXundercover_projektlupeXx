@@ -1,6 +1,11 @@
 #header{
   padding:15px;
+  -webkit-app-region: drag
 }
+#header button{
+  -webkit-app-region:no-drag
+
+}	
 #canvas{
 	height: 840px;
 	width: 1200px;
