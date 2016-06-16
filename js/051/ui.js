@@ -82,8 +82,7 @@ APP.appUI_cl = Class.create({
         case 'close':
           window.close();
           break;
-
-
+        
       }
    }
 

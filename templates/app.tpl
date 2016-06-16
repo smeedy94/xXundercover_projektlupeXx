@@ -23,3 +23,40 @@
 		<canvas id="canvas" width="1200px" height="840px"></canvas>
 	</div>
 
+
+
+
+
+<div id="add_projekt_modal" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header">Projekt erstellen</div>
+
+			<form class="uk-form uk-form-stacked">
+
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Name</label>
+			        <div class="uk-form-controls">
+			        	<input type="text" placeholder="Name" class="uk-width-1-1">
+			        </div>
+			    </div>
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">etc</label>
+			        <div class="uk-form-controls">
+			        	<input type="text" placeholder="etc" class="uk-width-1-1">
+			        </div>
+			    </div>
+
+			     <div class="uk-modal-footer">
+			     	<button class="uk-button" data-action="save">Erstellen</button>
+					<button class="uk-button" data-action="cancel">Abbrechen</button>
+			     </div>
+    
+
+
+			</form>
+
+
+    </div>
+</div>

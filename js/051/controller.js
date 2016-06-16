@@ -45,7 +45,8 @@ APP.zoom0_cl = Class.create({
 
     },
    notify_px: function (self_opl, message_spl, data_apl) {
-      this.addBox();
+      // this.addBox();
+      this.addProjekt();
    },
    canClose_px: function () {
       return true;
@@ -98,10 +99,22 @@ APP.zoom0_cl = Class.create({
           width: 50, 
           height: 50, 
           fill: "#000",
-          opacity: 0.55
+          opacity: 0.55,
+          name: "test"
       };
-      var box = this.canvas.display.rectangle(conf);
       
+      var text = this.canvas.display.text({
+         x: 25,
+         y: 65,
+         origin: { x: "center", y: "bottom" },
+         font: "bold 15px sans-serif",
+         text: "test",
+         fill: "#F00"
+      });
+
+      var box = this.canvas.display.rectangle(conf);
+      box.addChild(text);
+      console.log(box);
       that = this;
 
       box.dragAndDrop({
@@ -110,13 +123,21 @@ APP.zoom0_cl = Class.create({
       });
 
       this.model.addBox(box.id, conf);
-
+      // this.canvas.addChild(text);
       this.canvas.addChild(box);
    },
    updateBox: function(){
       var id = this.id; 
       that.model.updateBox(this.id, this.x, this.y);
-   }
+   },
+   addProjekt: function(){
+      var modal = UIkit.modal("#add_projekt_modal");
 
+      if ( modal.isActive() ) {
+             modal.hide();
+      } else {
+             modal.show();
+      }
+   }
 
 });
