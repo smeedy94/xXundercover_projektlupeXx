@@ -21,6 +21,7 @@ APP.appController_cl = Class.create({
    createEventHandler_p: function () {
     /* Ereignisbehandlung einrichten */
    $("#header button").on('click', this.onClick_0.bind(this));
+   $("#add_projekt_modal").on('click','button', this.onClick_0.bind(this));
      
    },
    render_px: function (data_opl) {
@@ -37,6 +38,8 @@ APP.appController_cl = Class.create({
    },
    onClick_0: function(event_opl){
          var action = $(event_opl.target).attr("data-action");
+            event_opl.preventDefault();
+
       switch(action){
         case 'add':
           APP.es_o.publish_px('zoom0', null);
@@ -56,12 +59,15 @@ APP.appController_cl = Class.create({
         case 'close':
           window.close();
           break;
-        
+         case 'save':
+            var data = $("#add_projekt_modal form").serializeArray();
+            APP.es_o.publish_px('zoom0', data);
+
+            break;
+      }
+
    }
-}
-
-
-   
+  
 });
 
 APP.zoom0_cl = Class.create({
@@ -77,7 +83,13 @@ APP.zoom0_cl = Class.create({
     },
    notify_px: function (self_opl, message_spl, data_apl) {
       // this.addBox();
-      this.addProjekt();
+      if(data_apl == null)
+         this.addProjekt();
+      else
+      {
+         console.log(data_apl);
+         this.addBox(data_apl)
+      }
    },
    canClose_px: function () {
       return true;
@@ -123,7 +135,8 @@ APP.zoom0_cl = Class.create({
 
    },
 
-   addBox: function(){
+   addBox: function(data_apl){
+      var next_id = APP.db_o.getNextId("data/projekte.json");
       var conf= {
           x: 50, 
           y: 150, 
@@ -131,7 +144,7 @@ APP.zoom0_cl = Class.create({
           height: 50, 
           fill: "#000",
           opacity: 0.55,
-          name: "test"
+          id_s:next_id
       };
       
       var text = this.canvas.display.text({
@@ -139,7 +152,7 @@ APP.zoom0_cl = Class.create({
          y: 65,
          origin: { x: "center", y: "bottom" },
          font: "bold 15px sans-serif",
-         text: "test",
+         text: data_apl[0]['value'],
          fill: "#F00"
       });
 
@@ -153,13 +166,13 @@ APP.zoom0_cl = Class.create({
          end: this.updateBox
       });
 
-      this.model.addBox(box.id, conf);
+      this.model.addBox(box.id_s, conf);
       // this.canvas.addChild(text);
       this.canvas.addChild(box);
    },
    updateBox: function(){
       var id = this.id; 
-      that.model.updateBox(this.id, this.x, this.y);
+      that.model.updateBox(this.id_s, this.x, this.y);
    },
    addProjekt: function(){
       var modal = UIkit.modal("#add_projekt_modal");

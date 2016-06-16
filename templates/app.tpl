@@ -38,13 +38,13 @@
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Name</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Name" class="uk-width-1-1">
+			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">etc</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="etc" class="uk-width-1-1">
+			        	<input type="text" placeholder="etc" class="uk-width-1-1" name="etc">
 			        </div>
 			    </div>
 

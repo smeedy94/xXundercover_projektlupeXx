@@ -41,6 +41,23 @@ APPLIB.Database_cl = Class.create({
          console.error(e);
       }
       return data_o;
+   },
+   getNextId:function(path){
+      try{
+         FS.accessSync(path);
+         var data_o=null;
+         data_o = JS.readFileSync(path);
+         max_id=0;
+         for (var x in data_o){
+            if(x > max_id)
+               max_id = x;
+         }
+         max_id++;
+         return max_id;
+         }
+         catch(e){
+            return 0;
+         }
    }
 });
 // EOF
