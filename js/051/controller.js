@@ -37,6 +37,7 @@ APP.zoom0_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function () {
          this.model = new APP.zoom0_mpde_cl();
+         this.akt_o = null;
          // this.list = {};
 
          APP.es_o.subscribe_px(this, 'zoom0');
@@ -71,6 +72,7 @@ APP.zoom0_cl = Class.create({
 
          that = this;
          box.dragAndDrop({
+         start: this.select,
          end: this.updateBox
          });
 
@@ -78,6 +80,9 @@ APP.zoom0_cl = Class.create({
 
 
       }
+
+   },
+   select:function(){
 
    },
    addBox: function(){
@@ -93,6 +98,7 @@ APP.zoom0_cl = Class.create({
       that = this;
 
       box.dragAndDrop({
+         start: this.select,
          end: this.updateBox
       });
 
