@@ -9,6 +9,7 @@
       "width": 1200,
       "height": 900,
       "min_width": 800,
-      "min_height": 600
+      "min_height": 600,
+      "frame":false
    }
 }

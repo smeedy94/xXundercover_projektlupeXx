@@ -29,7 +29,9 @@
 APP.appUI_cl = Class.create({
 
 	initialize: function () {
-		this.template_s = "app.tpl";
+    this.element_o = $("#header");
+
+
    },
    notify_px: function (self_opl, message_spl, data_apl) {
    },
@@ -43,9 +45,6 @@ APP.appUI_cl = Class.create({
 	    this.element_o.on('click','button', this.onClick_p.bind(this));
    },
    render_px: function (data_opl) {
-	    var markup_s = APP.tm_o.execute_px(this.template_s, null);
-	    this.element_o = $("body");
-	    this.element_o.html(markup_s);
       this.createEventHandler_p();
       this.dis_buttons();
    },

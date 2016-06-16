@@ -1,3 +1,7 @@
 #header{
   padding:15px;
 }
+#canvas{
+	height: 840px;
+	width: 1200px;
+}

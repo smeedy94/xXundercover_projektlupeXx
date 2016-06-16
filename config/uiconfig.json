@@ -3,6 +3,11 @@
       "instanceName" : "app",
       "class" : "appUI_cl",
       "appTemplate" : "app.tpl"
+   },
+   "app_cont":{
+      "instanceName" : "app_cont",
+      "class" : "appController_cl",
+      "appTemplate" : "app.tpl"
    }
 
 

@@ -18,8 +18,7 @@
 		</div>
 	</div>
 
-	<div class="uk-container uk-padding-remove">
-
+	<div>
 		<canvas id="canvas"></canvas>
 	</div>
 

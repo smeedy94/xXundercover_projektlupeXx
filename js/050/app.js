@@ -50,7 +50,7 @@ APP.Application_cl = Class.create({
       this.actTemplate_s = '';
 
       APP.es_o.subscribe_px(this, 'app.action');
-      APP.es_o.publish_px('app.action', ['app']);
+      APP.es_o.publish_px('app.action', ['app_cont']);
 
       // Applikations-Objekt verwaltet die UI-Ereignisse aus dem NavBar und dem SideBar direkt
       // da der Bezug das body-Element ist, kann die Einrichtung bereits jetzt erfolgen
