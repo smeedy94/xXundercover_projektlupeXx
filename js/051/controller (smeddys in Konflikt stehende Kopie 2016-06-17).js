@@ -149,11 +149,6 @@ APP.zoom0_cl = Class.create({
       this.canvas.removeChild(this.akt_o);
 
       this.model.deleteBox(this.akt_o.id_s);
-
-      APP.es_o.publish_px('ui', ['dis']);
-
-      this.akt_o=null;
-
    },
 
    addBox: function(data_apl){

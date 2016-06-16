@@ -30,9 +30,20 @@ APP.appUI_cl = Class.create({
 
 	initialize: function () {
     this.element_o = $("#header button");
+ 
+    APP.es_o.subscribe_px(this, 'ui');
+
 
    },
    notify_px: function (self_opl, message_spl, data_apl) {
+      switch(data_apl[0]){
+        case 'en':
+          this.en_buttons();
+          break;
+        case 'dis':
+          this.dis_buttons();
+          break;
+      }
    },
    canClose_px: function () {
       return true;

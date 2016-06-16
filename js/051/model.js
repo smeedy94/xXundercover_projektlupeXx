@@ -25,6 +25,10 @@ APP.zoom0_mpde_cl = Class.create({
     APP.db_o.execute_px("POST","data/projekte.json",this.data_o);
 
   },
+  deleteBox:function(id){
+    delete this.data_o[id];
+    APP.db_o.execute_px("POST","data/projekte.json",this.data_o);
+  },
   getData:function(){
     return this.data_o;
   }
