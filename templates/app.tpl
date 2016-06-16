@@ -20,6 +20,6 @@
 	</div>
 
 	<div>
-		<canvas id="canvas"></canvas>
+		<canvas id="canvas" width="1200px" height="840px"></canvas>
 	</div>
 

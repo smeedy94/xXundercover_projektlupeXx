@@ -37,7 +37,8 @@ APPLIB.Database_cl = Class.create({
          }
       }
       catch(e){
-         console.error("Die Datei ist nicht vorhanden!");
+         // console.error("Die Datei ist nicht vorhanden!");
+         console.error(e);
       }
       return data_o;
    }

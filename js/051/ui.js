@@ -65,7 +65,7 @@ APP.appUI_cl = Class.create({
       var action = $(event_opl.target).attr("data-action");
       switch(action){
         case 'add':
-          alert("add");
+          APP.es_o.publish_px('zoom0', null);
           break;
         case 'edit':
           alert("edit");
