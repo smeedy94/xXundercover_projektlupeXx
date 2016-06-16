@@ -41,7 +41,7 @@ APP.appUI_cl = Class.create({
    },
    createEventHandler_p: function () {
 	    /* Ereignisbehandlung einrichten */
-      $("#header button").on('click', this.onClick_p.bind(this));
+      // $("#header button").on('click', this.onClick_p.bind(this));
 	     
    },
    render_px: function (data_opl) {
@@ -62,30 +62,5 @@ APP.appUI_cl = Class.create({
       });
    },
    onClick_p: function(event_opl){
-      var action = $(event_opl.target).attr("data-action");
-      switch(action){
-        case 'add':
-          APP.es_o.publish_px('zoom0', null);
-          break;
-        case 'edit':
-          alert("edit");
-          break;
-        case 'delete':
-          alert("delete");
-          break;
-        case 'out':
-          alert("zoomout");
-          break;
-        case 'in':
-          alert("zoomin");
-          break;
-        case 'close':
-          window.close();
-          break;
-        
       }
-   }
-
-
-
 });

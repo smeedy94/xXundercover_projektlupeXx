@@ -18,16 +18,47 @@ APP.appController_cl = Class.create({
    },
    close_px: function () {
    },
+   createEventHandler_p: function () {
+    /* Ereignisbehandlung einrichten */
+   $("#header button").on('click', this.onClick_0.bind(this));
+     
+   },
    render_px: function (data_opl) {
    		this.view_o.render_px();
    		this.zoom_o.render_px();
+         this.createEventHandler_p();
+
    },
    succ: function(){
    		this.zoomState++;
    },
    prev: function(){
    		this.zoomState--;
+   },
+   onClick_0: function(event_opl){
+         var action = $(event_opl.target).attr("data-action");
+      switch(action){
+        case 'add':
+          APP.es_o.publish_px('zoom0', null);
+          break;
+        case 'edit':
+          alert("edit");
+          break;
+        case 'delete':
+          alert("delete");
+          break;
+        case 'out':
+          alert("zoomout");
+          break;
+        case 'in':
+          alert("zoomin");
+          break;
+        case 'close':
+          window.close();
+          break;
+        
    }
+}
 
 
    
