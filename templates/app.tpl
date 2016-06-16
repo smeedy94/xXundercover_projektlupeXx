@@ -14,6 +14,7 @@
 				<button class="uk-button uk-button-success" data-action="add">Hinzufügen</button>
 				<button class="uk-button uk-button-success" data-action="edit">Bearbeiten</button>
 				<button class="uk-button uk-button-danger" data-action="delete">Löschen</button>
+				<button class="uk-button uk-button-danger material-icons" data-action="close">close</button>
 			</div>
 		</div>
 	</div>

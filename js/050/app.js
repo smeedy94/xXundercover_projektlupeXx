@@ -84,7 +84,7 @@ debugger
    },
    createEventHandler_p: function () {
       /* Ereignisbehandlung einrichten */
-      $('body').on('click', this.onClick_p.bind(this));
+      // $('body').on('click', this.onClick_p.bind(this));
    },
    onClick_p: function (event_opl) {
       // Zur Entkopplung (= kein direkter Aufruf) UI-Event als Nachricht mit dem Event-Service weitergeben

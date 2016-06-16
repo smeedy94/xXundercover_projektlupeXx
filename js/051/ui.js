@@ -29,8 +29,7 @@
 APP.appUI_cl = Class.create({
 
 	initialize: function () {
-    this.element_o = $("#header");
-
+    this.element_o = $("#header button");
 
    },
    notify_px: function (self_opl, message_spl, data_apl) {
@@ -42,11 +41,13 @@ APP.appUI_cl = Class.create({
    },
    createEventHandler_p: function () {
 	    /* Ereignisbehandlung einrichten */
-	    this.element_o.on('click','button', this.onClick_p.bind(this));
+      $("#header button").on('click', this.onClick_p.bind(this));
+	     
    },
    render_px: function (data_opl) {
-      this.createEventHandler_p();
       this.dis_buttons();
+      this.createEventHandler_p();
+
    },
    dis_buttons: function(){
       $(".uk-button-group button").each(function(){
@@ -78,6 +79,11 @@ APP.appUI_cl = Class.create({
         case 'in':
           alert("zoomin");
           break;
+        case 'close':
+          window.close();
+          break;
+
+
       }
    }
 
