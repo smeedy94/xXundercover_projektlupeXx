@@ -71,6 +71,7 @@ APP.zoom0_cl = Class.create({
          var box = this.canvas.display.rectangle(data[x]);
 
          that = this;
+
          box.dragAndDrop({
          start: this.select,
          end: this.updateBox
@@ -83,8 +84,13 @@ APP.zoom0_cl = Class.create({
 
    },
    select:function(){
+            this.fadeTo(1,"short","ease-in-out-cubic", function(){})
+            if(that.akt_o != null)
+               that.akt_o.fadeTo(0.55,"short","ease-in-out-cubic", function(){})
+            that.akt_o = this;
 
    },
+
    addBox: function(){
       var conf= {
           x: 50, 
@@ -92,6 +98,7 @@ APP.zoom0_cl = Class.create({
           width: 50, 
           height: 50, 
           fill: "#000",
+          opacity: 0.55
       };
       var box = this.canvas.display.rectangle(conf);
       
