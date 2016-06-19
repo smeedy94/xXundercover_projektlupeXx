@@ -50,6 +50,7 @@
 
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save">Erstellen</button>
+			     	<button class="uk-button uk-hidden" data-action="update">Speichern</button>
 					<button class="uk-button" data-action="cancel">Abbrechen</button>
 			     </div>
     

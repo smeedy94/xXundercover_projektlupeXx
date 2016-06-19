@@ -1,0 +1,22 @@
+{
+    "0": {
+        "x": 378,
+        "y": 258,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.55,
+        "id_s": 0,
+        "text_o": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "hitler",
+            "fill": "#F00"
+        }
+    }
+}
