@@ -22,12 +22,13 @@ APP.appController_cl = Class.create({
     /* Ereignisbehandlung einrichten */
    $("#header button").on('click', this.onClick_0.bind(this));
    $("#add_projekt_modal").on('click','button', this.onClick_0.bind(this));
-     
+   $("#edit_projekt_modal").on('click','button', this.onClick_0.bind(this));
+
    },
    render_px: function (data_opl) {
    		this.view_o.render_px();
    		this.zoom_o.render_px();
-         this.createEventHandler_p();
+      this.createEventHandler_p();
 
    },
    succ: function(){
@@ -45,7 +46,8 @@ APP.appController_cl = Class.create({
           APP.es_o.publish_px('zoom0', ['add',null]);
           break;
         case 'edit':
-          alert("edit");
+            var data = $("#edit_projekt_modal form").serializeArray();
+            APP.es_o.publish_px('zoom0', ['edit',data]);
           break;
         case 'delete':
           APP.es_o.publish_px('zoom0', ['delete']);
@@ -65,9 +67,7 @@ APP.appController_cl = Class.create({
 
             break;
       }
-
    }
-  
 });
 
 APP.zoom0_cl = Class.create({
@@ -93,6 +93,9 @@ APP.zoom0_cl = Class.create({
          case 'delete':
             this.delete();
             break;
+         case 'edit':
+            this.editProjekt();
+            break;
       }
 
    },
@@ -109,9 +112,6 @@ APP.zoom0_cl = Class.create({
 		});
       
       this.loadBox();
-
-
-      
    },
    loadBox:function(){
       var data = this.model.getData();
@@ -120,7 +120,6 @@ APP.zoom0_cl = Class.create({
          var box = this.canvas.display.rectangle(data[x]);
          var text = this.canvas.display.text( data[x].text_o );
          
-
          that = this;
 
          box.dragAndDrop({
@@ -130,10 +129,7 @@ APP.zoom0_cl = Class.create({
 
          box.addChild(text);
          this.canvas.addChild(box);
-
-
       }
-
    },
    select:function(){
          this.fadeTo(1,"short","ease-in-out-cubic", function(){})
@@ -205,6 +201,16 @@ APP.zoom0_cl = Class.create({
       } else {
              modal.show();
       }
+   },
+   editProjekt: function(){
+      var modal = UIkit.modal("#edit_projekt_modal");
+
+      if ( modal.isActive() ) {
+             modal.hide();
+      } else {
+             modal.show();
+      }
+      
    }
 
 });
