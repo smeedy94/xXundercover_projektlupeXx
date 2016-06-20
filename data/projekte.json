@@ -1,13 +1,17 @@
 {
     "0": {
-        "x": 862,
-        "y": 359,
+        "x": 627,
+        "y": 537,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
         "id_s": 0,
-        "text_o": {
+        "name": "test",
+        "auftraggeber": "test",
+        "frist": "test",
+        "kosten": "test",
+        "text_c": {
             "x": 25,
             "y": 65,
             "origin": {
@@ -15,19 +19,23 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "s",
+            "text": "test",
             "fill": "#F00"
         }
     },
     "1": {
-        "x": 484,
-        "y": 304,
+        "x": 808,
+        "y": 357,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
         "id_s": 1,
-        "text_o": {
+        "name": "Y",
+        "auftraggeber": "",
+        "frist": "",
+        "kosten": "",
+        "text_c": {
             "x": 25,
             "y": 65,
             "origin": {
@@ -35,127 +43,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "sa",
-            "fill": "#F00"
-        }
-    },
-    "2": {
-        "x": 560,
-        "y": 73,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 2,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
-            "fill": "#F00"
-        }
-    },
-    "3": {
-        "x": 180,
-        "y": 382,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 3,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
-            "fill": "#F00"
-        }
-    },
-    "4": {
-        "x": 608,
-        "y": 362,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 4,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
-            "fill": "#F00"
-        }
-    },
-    "5": {
-        "x": 292,
-        "y": 154,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 5,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
-            "fill": "#F00"
-        }
-    },
-    "6": {
-        "x": 258,
-        "y": 306,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 6,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
-            "fill": "#F00"
-        }
-    },
-    "7": {
-        "x": 738,
-        "y": 139,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
-        "opacity": 0.55,
-        "id_s": 7,
-        "text_o": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "",
+            "text": "Y",
             "fill": "#F00"
         }
     }

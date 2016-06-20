@@ -61,7 +61,7 @@
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" id="addbtninform" data-action="save">Erstellen</button>
 			     	<button class="uk-button" id="editbtninform" data-action="update">Übernehmen</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>

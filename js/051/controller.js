@@ -64,6 +64,10 @@ APP.appController_cl = Class.create({
             var data = $("#add_projekt_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['save',data]);
             break;
+         case 'update':
+            var data = $("#add_projekt_modal form").serializeArray();
+            APP.es_o.publish_px('zoom0', ['update',data]);
+            break;
       }
    }
 });
@@ -73,7 +77,6 @@ APP.zoom0_cl = Class.create({
    initialize: function () {
          this.model = new APP.zoom0_mpde_cl();
          this.akt_o = null;
-         // this.list = {};
 
          APP.es_o.subscribe_px(this, 'zoom0');
 
@@ -95,7 +98,7 @@ APP.zoom0_cl = Class.create({
             this.openModel('edit');
             break;
          case 'update':
-            this.
+            this.updateBox(data_apl[1]);
             break; 
 
       }
@@ -107,7 +110,7 @@ APP.zoom0_cl = Class.create({
    close_px: function () {
    },
    render_px: function (data_opl) {
-     	this.canvas = oCanvas.create({
+      this.canvas = oCanvas.create({
       		canvas: "#canvas",
       		background: "#A2B5CD",
       		fps: 60
@@ -120,16 +123,17 @@ APP.zoom0_cl = Class.create({
 
       for (var x in data){
          var box = this.canvas.display.rectangle(data[x]);
-         var text = this.canvas.display.text( data[x].text_o );
+         var text = this.canvas.display.text( data[x].text_c );
          
          that = this;
 
          box.dragAndDrop({
          start: this.select,
-         end: this.updateBox
+         end: this.updateBoxPos
          });
 
          box.addChild(text);
+         box['text_o'] = text;
          this.canvas.addChild(box);
       }
    },
@@ -143,7 +147,6 @@ APP.zoom0_cl = Class.create({
    },
 
    delete: function(){
-      console.log(this.akt_o);
       this.canvas.removeChild(this.akt_o);
 
       this.model.deleteBox(this.akt_o.id_s);
@@ -152,11 +155,16 @@ APP.zoom0_cl = Class.create({
 
       this.akt_o=null;
 
+
    },
 
    addBox: function(data_apl){
       var next_id = APP.db_o.getNextId("data/projekte.json");
       var name=data_apl[0]['value'];
+      var auftraggeber=data_apl[1]['value'];
+      var frist=data_apl[2]['value'];
+      var kosten=data_apl[3]['value'];
+
       
       var conf= {
           x: 50, 
@@ -166,7 +174,12 @@ APP.zoom0_cl = Class.create({
           fill: "#000",
           opacity: 0.55,
           id_s:next_id,
-          text_o: {
+          name:name,
+          auftraggeber:auftraggeber,
+          frist:frist,
+          kosten:kosten,
+
+          text_c: {
             x: 25,
             y: 65,
             origin: { x: "center", y: "bottom" },
@@ -177,23 +190,35 @@ APP.zoom0_cl = Class.create({
       };
       
       var box = this.canvas.display.rectangle(conf);
-      var text = this.canvas.display.text( conf.text_o );
+      var text = this.canvas.display.text( conf.text_c );
 
 
       that = this;
       box.dragAndDrop({
          start: this.select,
-         end: this.updateBox
+         end: this.updateBoxPos
       });
 
       box.addChild(text);
+      box['text_o'] = text;
       this.canvas.addChild(box);
 
       this.model.addBox(box.id_s, conf);
    },
-   updateBox: function(){
+   updateBoxPos: function(){
       var id = this.id; 
-      that.model.updateBox(this.id_s, this.x, this.y);
+      that.model.updateBoxPos(this.id_s, this.x, this.y);
+   },
+   updateBox:function(conf){
+      // console.log(conf);
+      // alert(this.akt_o.id_s);
+
+      this.model.updateBox(this.akt_o.id_s, conf);
+
+      this.akt_o.text_o.text = conf[0]['value'];
+      console.log(this.akt_o);
+      this.canvas.redraw();
+
    },
    openModel: function(case_s){
       
