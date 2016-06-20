@@ -30,7 +30,7 @@
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
-		<div class="uk-modal-header"><p>Projekt erstellen</p></div>
+		<div class="uk-modal-header">Projekt erstellen</div>
 
 			<form class="uk-form uk-form-stacked">
 
@@ -52,18 +52,6 @@
 			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Aufgabengruppe</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Aufgabengruppe" class="uk-width-1-1" name="Aufgabengruppe">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Personal</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Personal" class="uk-width-1-1" name="Personal">
-			        </div>
-			    </div>
 				<div class="uk-form-row">
 			        <label class="uk-form-label" for="">Kosten</label>
 			        <div class="uk-form-controls">
@@ -71,8 +59,8 @@
 			        </div>
 			    </div>
 			     <div class="uk-modal-footer">
-			     	<button class="uk-button" data-action="save">Erstellen</button>
-			     	<button class="uk-button uk-hidden" data-action="update">Speichern</button>
+			     	<button class="uk-button" id="addbtninform" data-action="save">Erstellen</button>
+			     	<button class="uk-button" id="editbtninform" data-action="update">Übernehmen</button>
 					<button class="uk-button" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>

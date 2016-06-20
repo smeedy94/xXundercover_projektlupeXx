@@ -12,9 +12,9 @@
 }
 
 #addbtninform{
-	visibility: show;
+	display: inline-block;
 }
 
 #editbtninform{
-	visibility: hidden;
+	display: none;
 }

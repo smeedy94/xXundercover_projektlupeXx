@@ -22,7 +22,6 @@ APP.appController_cl = Class.create({
     /* Ereignisbehandlung einrichten */
    $("#header button").on('click', this.onClick_0.bind(this));
    $("#add_projekt_modal").on('click','button', this.onClick_0.bind(this));
-   $("#edit_projekt_modal").on('click','button', this.onClick_0.bind(this));
 
    },
    render_px: function (data_opl) {
@@ -84,12 +83,7 @@ APP.zoom0_cl = Class.create({
      
       switch(data_apl[0]){
          case 'add':
-              $(document).ready(function(){
-                  $("p").text('Projekt erstellen');
-              });
-            document.getElementById('#editbtninform').hide();
-            document.getElementById('#addbtninform').show();
-            this.addProjekt();
+            this.openModel('add');
             break;
          case 'save':
             this.addBox(data_apl[1])
@@ -98,10 +92,7 @@ APP.zoom0_cl = Class.create({
             this.delete();
             break;
          case 'edit':
-            $(document).ready(function(){
-                $("p").text('Projekt bearbeiten');
-            });
-            this.addProjekt();
+            this.openModel('edit');
             break;
          case 'update':
             this.
@@ -204,8 +195,18 @@ APP.zoom0_cl = Class.create({
       var id = this.id; 
       that.model.updateBox(this.id_s, this.x, this.y);
    },
-   addProjekt: function(){
+   openModel: function(case_s){
+      
       var modal = UIkit.modal("#add_projekt_modal");
+      if(case_s=='add'){
+         $("#add_projekt_modal .uk-modal-header").html('Projekt erstellen');
+         $("#editbtninform").hide();
+         $("#addbtninform").show();
+      }else{
+         $("#add_projekt_modal .uk-modal-header").html('Projekt bearbeiten');
+         $("#editbtninform").show();
+         $("#addbtninform").hide();
+      }
 
       if ( modal.isActive() ) {
              modal.hide();
