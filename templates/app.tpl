@@ -30,7 +30,7 @@
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
-		<div class="uk-modal-header">Projekt erstellen</div>
+		<div class="uk-modal-header"><p>Projekt erstellen</p></div>
 
 			<form class="uk-form uk-form-stacked">
 
@@ -80,57 +80,6 @@
 </div>
 
 
-<div id="edit_projekt_modal" class="uk-modal">
-    <div class="uk-modal-dialog">
-        <a class="uk-modal-close uk-close"></a>
-       
-		<div class="uk-modal-header">Projekt bearbeiten</div>
 
-			<form class="uk-form uk-form-stacked">
-
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Name</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Auftraggeber</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Auftraggeber" class="uk-width-1-1" name="Auftraggeber">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Frist</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Aufgabengruppe</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Aufgabengruppe" class="uk-width-1-1" name="Aufgabengruppe">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Personal</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Personal" class="uk-width-1-1" name="Personal">
-			        </div>
-			    </div>
-				<div class="uk-form-row">
-			        <label class="uk-form-label" for="">Kosten</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Kosten" class="uk-width-1-1" name="Kosten">
-			        </div>
-			    </div>
-			     <div class="uk-modal-footer">
-			     	<button class="uk-button uk-hidden" data-action="save">Erstellen</button>
-			     	<button class="uk-button" data-action="update">Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
-			     </div>
-			</form>
-    </div>
-</div>
 
 

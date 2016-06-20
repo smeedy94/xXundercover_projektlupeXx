@@ -46,7 +46,7 @@ APP.appController_cl = Class.create({
           APP.es_o.publish_px('zoom0', ['add',null]);
           break;
         case 'edit':
-            var data = $("#edit_projekt_modal form").serializeArray();
+            var data = $("#add_projekt_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['edit',data]);
           break;
         case 'delete':
@@ -64,7 +64,6 @@ APP.appController_cl = Class.create({
          case 'save':
             var data = $("#add_projekt_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['save',data]);
-
             break;
       }
    }
@@ -85,6 +84,11 @@ APP.zoom0_cl = Class.create({
      
       switch(data_apl[0]){
          case 'add':
+              $(document).ready(function(){
+                  $("p").text('Projekt erstellen');
+              });
+            document.getElementById('#editbtninform').hide();
+            document.getElementById('#addbtninform').show();
             this.addProjekt();
             break;
          case 'save':
@@ -94,8 +98,15 @@ APP.zoom0_cl = Class.create({
             this.delete();
             break;
          case 'edit':
-            this.editProjekt();
+            $(document).ready(function(){
+                $("p").text('Projekt bearbeiten');
+            });
+            this.addProjekt();
             break;
+         case 'update':
+            this.
+            break; 
+
       }
 
    },
@@ -106,10 +117,10 @@ APP.zoom0_cl = Class.create({
    },
    render_px: function (data_opl) {
      	this.canvas = oCanvas.create({
-		canvas: "#canvas",
-		background: "#A2B5CD",
-		fps: 60
-		});
+      		canvas: "#canvas",
+      		background: "#A2B5CD",
+      		fps: 60
+  		});
       
       this.loadBox();
    },
@@ -201,16 +212,6 @@ APP.zoom0_cl = Class.create({
       } else {
              modal.show();
       }
-   },
-   editProjekt: function(){
-      var modal = UIkit.modal("#edit_projekt_modal");
-
-      if ( modal.isActive() ) {
-             modal.hide();
-      } else {
-             modal.show();
-      }
-      
-   }
+    }
 
 });

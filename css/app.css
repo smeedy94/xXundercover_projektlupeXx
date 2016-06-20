@@ -10,3 +10,11 @@
 /*	height: 840px;
 	width: 1200px;*/
 }
+
+#addbtninform{
+	visibility: show;
+}
+
+#editbtninform{
+	visibility: hidden;
+}
