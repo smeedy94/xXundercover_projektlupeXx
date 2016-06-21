@@ -55,18 +55,22 @@ APP.appController_cl = Class.create({
 
    },
    succ: function(){
+         if(this.zoomState<1)
+         {
          var id = this.zoom_o[this.zoomState].akt_o.id_s;
          this.zoom_o[this.zoomState].close_px();
    		this.zoomState++;
          this.zoom_o[this.zoomState].render_px(id);
+         }
 
    },
    prev: function(){
+         if(this.zoomState>0)
+         {
          this.zoom_o[this.zoomState].close_px();
    		this.zoomState--;
          this.zoom_o[this.zoomState].render_px();
-
-  }
- 
+        }
+ }
 
 });

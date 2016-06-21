@@ -39,8 +39,16 @@ APP.zoom1_mpde_cl = Class.create({
     delete this.data_o[id];
     APP.db_o.execute_px("POST","data/personal.json",this.data_o);
   },
-  getData:function(){
-    return this.data_o;
+  getData:function(id){
+    var sel={};
+
+    for (var x in this.data_o){
+      if(x ==id){
+        sel[x] = this.data_o[x];
+      }
+    }
+
+    return sel;
   }
 
 

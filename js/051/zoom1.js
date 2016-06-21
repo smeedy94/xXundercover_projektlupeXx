@@ -6,7 +6,6 @@ APP.zoom1_cl = Class.create({
          this.canvas = can;
          this.scene = can.scenes.create("zoom1", function(){});
 
-         this.loadBox();
 
 
          APP.es_o.subscribe_px(this, 'zoom1');
@@ -39,17 +38,27 @@ APP.zoom1_cl = Class.create({
       return true;
    },
    close_px: function () {
+
+      //scene leeren
+      for(var x in this.scene['objects']){
+        this.scene.remove(this.scene['objects'][x]);
+      }
+      this.scene.remove();
       this.canvas.scenes.unload("zoom1");
       this.destroyEventHandler_p();
 
    },
    render_px: function (data_opl) {
+      this.parent_id=data_opl;
+
+      this.loadBox(data_opl);
+
       $("#zoomStateText").html("Zoom 1");
       this.canvas.scenes.load("zoom1");
       this.createEventHandler_p();
    },
-   loadBox:function(){
-      var data = this.model.getData();
+   loadBox:function(id){
+      var data = this.model.getData(id);
 
       for (var x in data){
          var box = this.canvas.display.rectangle(data[x]);
@@ -102,6 +111,7 @@ APP.zoom1_cl = Class.create({
           fill: "#000",
           opacity: 0.55,
           id_s:next_id,
+          parent_id:this.parent_id,
           name:name,
 
 
