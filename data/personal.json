@@ -1,16 +1,13 @@
 {
     "0": {
-        "x": 247,
-        "y": 336,
+        "x": 354,
+        "y": 498,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
         "id_s": 0,
-        "name": "Test",
-        "auftraggeber": "1",
-        "frist": "1",
-        "kosten": "1",
+        "name": "Hitler",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -19,7 +16,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "Test",
+            "text": "Hitler",
             "fill": "#F00"
         }
     }
