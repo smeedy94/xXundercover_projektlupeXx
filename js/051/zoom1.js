@@ -56,6 +56,7 @@ APP.zoom1_cl = Class.create({
    render_px: function (data_opl) {
       this.parent_id=data_opl;
 
+      this.loadTimeLine();
       this.loadBox(data_opl);
 
       $("#zoomStateText").html("Zoom 1");
@@ -81,6 +82,26 @@ APP.zoom1_cl = Class.create({
          this.scene.add(box);
          this.items[x] = box;
       }
+
+   },
+   loadTimeLine:function(){
+      for (var x = 200; x < 1200; x+=200 ){
+        var line =  this.canvas.display.line({
+            start: { x: x, y: 0 },
+            end: { x: x, y: 640 },
+            stroke: "10px #0aa",
+            cap: "round"
+        });
+        this.scene.add(line);
+      }
+        var line =  this.canvas.display.line({
+            start: { x: 0, y: 640 },
+            end: { x: 1240, y: 640 },
+            stroke: "13px #000",
+            cap: "round"
+        });
+        this.scene.add(line);
+
    },
    select:function(){
          this.fadeTo(1,"short","ease-in-out-cubic", function(){})
@@ -107,6 +128,7 @@ APP.zoom1_cl = Class.create({
       var next_id = APP.db_o.getNextId("data/personal.json");
       var name=data_apl[0]['value'];
       var fachbereich=data_apl[1]['value'];
+      var color= data_apl[2]['value'];
  
 
       
@@ -115,8 +137,8 @@ APP.zoom1_cl = Class.create({
           y: 150, 
           width: 50, 
           height: 50, 
-          fill: "#000",
-          opacity: 0.55,
+          fill: color,
+          opacity: 0.40,
           id_s:next_id,
           parent_id:this.parent_id,
           name:name,
@@ -162,7 +184,6 @@ APP.zoom1_cl = Class.create({
       this.model.updateBox(this.akt_o.id_s, conf);
 
       this.akt_o.text_o.text = conf[0]['value'];
-      console.log(this.akt_o);
       this.canvas.redraw();
 
    },

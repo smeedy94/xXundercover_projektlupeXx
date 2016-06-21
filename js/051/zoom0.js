@@ -69,6 +69,7 @@ APP.zoom0_cl = Class.create({
          box['text_o'] = text;
          this.scene.add(box);
       }
+
    },
    select:function(){
       console.log(that);

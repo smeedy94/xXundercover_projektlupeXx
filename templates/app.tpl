@@ -73,7 +73,7 @@
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>
@@ -125,7 +125,7 @@
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>
@@ -155,11 +155,17 @@
 			        	<input type="text" placeholder="Fachbereich" class="uk-width-1-1" name="Fachbereich">
 			        </div>
 			    </div>
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Farbe</label>
+			        <div class="uk-form-controls">
+			        	<input type="color" placeholder="" class="uk-width-1-1" name="color">
+			        </div>
+			    </div>
 
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>
@@ -203,7 +209,7 @@
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>
@@ -241,7 +247,7 @@
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button" data-action="cancel">Abbrechen</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
     </div>
