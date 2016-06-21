@@ -1,7 +1,7 @@
 	<div class="uk-block uk-block-primary uk-block" id="header">
 		<div class="uk-grid uk-grid-width-1-3">
-			<div class="uk-button-group uk-margin-remove">
-				
+			<div class="uk-margin-remove">
+				<h3 class="uk-h3 uk-text-contrast" id="zoomStateText">Zoom 0</h3>
 			</div>
 			
 			<div class="uk-button-group uk-align-center uk-margin-remove">
@@ -155,12 +155,7 @@
 			        	<input type="text" placeholder="Fachbereich" class="uk-width-1-1" name="Fachbereich">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Personen</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Personen" class="uk-width-1-1" name="Personen">
-			        </div>
-			    </div>
+
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>

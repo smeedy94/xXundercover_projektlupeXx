@@ -6,6 +6,10 @@ APP.zoom1_cl = Class.create({
          this.canvas = can;
          this.scene = can.scenes.create("zoom1", function(){});
 
+         //alle Obejekte die angelegt werden, werdne hier referenziert
+         this.items={};
+
+
 
 
          APP.es_o.subscribe_px(this, 'zoom1');
@@ -38,10 +42,11 @@ APP.zoom1_cl = Class.create({
       return true;
    },
    close_px: function () {
-
+      console.log(this.scene);
       //scene leeren
-      for(var x in this.scene['objects']){
-        this.scene.remove(this.scene['objects'][x]);
+      for(var x in this.items){
+        console.log(x);
+        this.scene.remove(this.items[x]);
       }
       this.scene.remove();
       this.canvas.scenes.unload("zoom1");
@@ -74,6 +79,7 @@ APP.zoom1_cl = Class.create({
          box.addChild(text);
          box['text_o'] = text;
          this.scene.add(box);
+         this.items[x] = box;
       }
    },
    select:function(){
@@ -100,6 +106,7 @@ APP.zoom1_cl = Class.create({
    addBox: function(data_apl){
       var next_id = APP.db_o.getNextId("data/personal.json");
       var name=data_apl[0]['value'];
+      var fachbereich=data_apl[1]['value'];
  
 
       
@@ -113,6 +120,7 @@ APP.zoom1_cl = Class.create({
           id_s:next_id,
           parent_id:this.parent_id,
           name:name,
+          fachbereich:fachbereich,
 
 
           text_c: {
@@ -139,6 +147,8 @@ APP.zoom1_cl = Class.create({
       box['text_o'] = text;
       this.scene.add(box);
 
+      this.items[box.id_s] = box;
+
       this.model.addBox(box.id_s, conf);
    },
    updateBoxPos: function(){
@@ -160,12 +170,12 @@ APP.zoom1_cl = Class.create({
       var modal = UIkit.modal("#add_personal_modal");
       if(case_s=='add'){
          $("#add_personal_modal .uk-modal-header").html('Personal erstellen');
-         $("#editbtninform").hide();
-         $("#addbtninform").show();
+         $("#add_personal_modal #editbtninform").hide();
+         $("#add_personal_modal #addbtninform").show();
       }else{
          $("#add_personal_modal .uk-modal-header").html('Personal bearbeiten');
-         $("#editbtninform").show();
-         $("#addbtninform").hide();
+         $("#add_personal_modal #editbtninform").show();
+         $("#add_personal_modal #addbtninform").hide();
       }
       if ( modal.isActive() ) {
              modal.hide();

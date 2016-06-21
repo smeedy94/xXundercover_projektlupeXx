@@ -27,10 +27,11 @@ APP.zoom1_mpde_cl = Class.create({
   },
   updateBox:function(id, conf){
     this.data_o[id]['name'] = conf[0]['value'];
-    this.data_o[id]['auftraggeber'] = conf[1]['value'];
-    this.data_o[id]['frist'] = conf[2]['value'];
-    this.data_o[id]['kosten'] = conf[3]['value'];
+    this.data_o[id]['fachbereich'] = conf[1]['value'];
+
     this.data_o[id]['text_c']['text'] = conf[0]['value'];
+
+    
 
     APP.db_o.execute_px("POST","data/personal.json",this.data_o);
 
@@ -43,10 +44,11 @@ APP.zoom1_mpde_cl = Class.create({
     var sel={};
 
     for (var x in this.data_o){
-      if(x ==id){
+      if(this.data_o[x]['parent_id'] == id){
         sel[x] = this.data_o[x];
       }
     }
+    console.log(sel);
 
     return sel;
   }

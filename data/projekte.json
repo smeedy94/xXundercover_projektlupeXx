@@ -1,0 +1,50 @@
+{
+    "0": {
+        "x": 330,
+        "y": 290,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.55,
+        "id_s": 0,
+        "name": "x",
+        "auftraggeber": "",
+        "frist": "",
+        "kosten": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "x",
+            "fill": "#F00"
+        }
+    },
+    "1": {
+        "x": 728,
+        "y": 354,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.55,
+        "id_s": 1,
+        "name": "y",
+        "auftraggeber": "",
+        "frist": "",
+        "kosten": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "y",
+            "fill": "#F00"
+        }
+    }
+}
