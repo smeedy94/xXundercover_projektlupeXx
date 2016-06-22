@@ -27,9 +27,8 @@ APP.zoom0_mpde_cl = Class.create({
   },
   updateBox:function(id, conf){
     this.data_o[id]['name'] = conf[0]['value'];
-    this.data_o[id]['auftraggeber'] = conf[1]['value'];
-    this.data_o[id]['frist'] = conf[2]['value'];
-    this.data_o[id]['kosten'] = conf[3]['value'];
+    this.data_o[id]['Lage'] = conf[1]['value'];
+    this.data_o[id]['Nummer'] = conf[2]['value'];
     this.data_o[id]['text_c']['text'] = conf[0]['value'];
 
     APP.db_o.execute_px("POST","data/room.json",this.data_o);

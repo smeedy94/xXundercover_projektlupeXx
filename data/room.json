@@ -1,13 +1,13 @@
 {
     "0": {
-        "x": 224,
-        "y": 118,
+        "x": 296,
+        "y": 154,
         "image": "/images/room.png",
         "opacity": 0.55,
         "id_s": 0,
-        "name": "test",
-        "Lage": "test",
-        "Nummer": "Test",
+        "name": "x",
+        "Lage": "x",
+        "Nummer": "x",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -16,7 +16,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "test",
+            "text": "x",
             "fill": "#F0F"
         }
     }

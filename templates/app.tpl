@@ -109,10 +109,7 @@
        
 		<div class="uk-modal-header"><p>Gerätegruppen erstellen</p></div>
 
-		<div class="uk-button-group">
-			<button class="uk-button" data-uk-modal="{target: '##add_personal_modal'}">Personal</button>
-			<button class="uk-button uk-active" >Aufgabengruppe</button>
-		</div>
+
 			<form class="uk-form uk-form-stacked">
 
 			    <div class="uk-form-row">
