@@ -1,18 +1,17 @@
 
 
-APP.zoom1_cl = Class.create({
+APP.zoom2_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function (can) {
-         this.model = new APP.zoom1_mpde_cl();
+         this.model = new APP.zoom2_mpde_cl();
          this.akt_o = null;
          this.canvas = can;
-         this.scene = can.scenes.create("zoom1", function(){});
+         this.scene = can.scenes.create("zoom2", function(){});
 
-         this.items={}
+         this.loadBox();
 
 
-
-         APP.es_o.subscribe_px(this, 'zoom1');
+         APP.es_o.subscribe_px(this, 'zoom2');
 
 
     },
@@ -42,31 +41,24 @@ APP.zoom1_cl = Class.create({
       return true;
    },
    close_px: function () {
-      for(var x in this.items){
-        this.scene.remove(this.items[x]);
-      }
-      this.canvas.scenes.unload("zoom1");
+      this.canvas.scenes.unload("zoom2");
       this.destroyEventHandler_p();
    },
    render_px: function (data_opl) {
-      $("#zoomStateText").html("Zoom 1");
+      $("#zoomStateText").html("Zoom 2");
       
-      this.parent_id = data_opl;
-
-      this.loadBox(data_opl);
-
       
-      this.canvas.scenes.load("zoom1");
+      this.canvas.scenes.load("zoom2");
       this.createEventHandler_p();
    },
-   loadBox:function(id){
-      var data = this.model.getData(id);
+   loadBox:function(){
+      var data = this.model.getData();
 
       for (var x in data){
          var box = this.canvas.display.image(data[x]);
          var text = this.canvas.display.text( data[x].text_c );
          
-         that2 = this;
+         that3 = this;
 
          box.dragAndDrop({
          start: this.select,
@@ -76,16 +68,15 @@ APP.zoom1_cl = Class.create({
          box.addChild(text);
          box['text_o'] = text;
          this.scene.add(box);
-         this.items[x] = box;
       }
 
    },
    select:function(){
-      console.log(that2);
+      console.log(that3);
          this.fadeTo(1,"short","ease-in-out-cubic", function(){})
-         if(that2.akt_o != null && that2.akt_o != this)
-            that2.akt_o.fadeTo(0.55,"short","ease-in-out-cubic", function(){})
-         that2.akt_o = this;
+         if(that3.akt_o != null && that3.akt_o != this)
+            that3.akt_o.fadeTo(0.55,"short","ease-in-out-cubic", function(){})
+         that3.akt_o = this;
 
          APP.es_o.publish_px('ui', ['en']);
    },
@@ -114,7 +105,6 @@ APP.zoom1_cl = Class.create({
           height:64, 
           image: "/images/Mobile-Multiple-Devices-icon.png",
           opacity: 0.55,
-          parent_id: this.parent_id,
           id_s:next_id,
           name:name,
 
@@ -133,7 +123,7 @@ APP.zoom1_cl = Class.create({
       var text = this.canvas.display.text( conf.text_c );
 
 
-      that2 = this;
+      that3 = this;
       box.dragAndDrop({
          start: this.select,
          end: this.updateBoxPos
@@ -143,13 +133,11 @@ APP.zoom1_cl = Class.create({
       box['text_o'] = text;
       this.scene.add(box);
 
-      this.items[box.id_s] =box;
-
       this.model.addBox(box.id_s, conf);
    },
    updateBoxPos: function(){
       var id = this.id; 
-      that2.model.updateBoxPos(this.id_s, this.x, this.y);
+      that3.model.updateBoxPos(this.id_s, this.x, this.y);
    },
    updateBox:function(conf){
       // console.log(conf);
@@ -185,14 +173,14 @@ APP.zoom1_cl = Class.create({
 
       switch(action){
         case 'add':
-          APP.es_o.publish_px('zoom1', ['add',null]);
+          APP.es_o.publish_px('zoom2', ['add',null]);
           break;
         case 'edit':
             var data = $("#add_workgrp_modal form").serializeArray();
-            APP.es_o.publish_px('zoom1', ['edit',data]);
+            APP.es_o.publish_px('zoom2', ['edit',data]);
           break;
         case 'delete':
-          APP.es_o.publish_px('zoom1', ['delete']);
+          APP.es_o.publish_px('zoom2', ['delete']);
           break;
         case 'out':
           APP.es_o.publish_px('app_cont', ['out']);
@@ -206,11 +194,11 @@ APP.zoom1_cl = Class.create({
           break;
          case 'save':
             var data = $("#add_workgrp_modal form").serializeArray();
-            APP.es_o.publish_px('zoom1', ['save',data]);
+            APP.es_o.publish_px('zoom2', ['save',data]);
             break;
          case 'update':
             var data = $("#add_workgrp_modal form").serializeArray();
-            APP.es_o.publish_px('zoom1', ['update',data]);
+            APP.es_o.publish_px('zoom2', ['update',data]);
             break;
       }
    },

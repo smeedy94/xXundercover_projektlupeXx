@@ -44,7 +44,7 @@ APP.appController_cl = Class.create({
             background: "#FFF",
             fps: 60
       });
-      this.zoom_o = [new APP.zoom0_cl(this.canvas),new APP.zoom1_cl(this.canvas) ];
+      this.zoom_o = [new APP.zoom0_cl(this.canvas),new APP.zoom1_cl(this.canvas),new APP.zoom2_cl(this.canvas) ];
 
 
 
@@ -55,7 +55,7 @@ APP.appController_cl = Class.create({
 
    },
    succ: function(){
-         if(this.zoomState<1)
+         if(this.zoomState<2)
          {
          var id = this.zoom_o[this.zoomState].akt_o.id_s;
          this.zoom_o[this.zoomState].close_px();

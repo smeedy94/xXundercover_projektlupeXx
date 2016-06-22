@@ -1,4 +1,4 @@
-APP.zoom1_mpde_cl = Class.create({
+APP.zoom2_mpde_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function () {
       this.data_o =APP.db_o.execute_px("GET","data/work_group.json");
@@ -36,18 +36,8 @@ APP.zoom1_mpde_cl = Class.create({
     delete this.data_o[id];
     APP.db_o.execute_px("POST","data/work_group.json",this.data_o);
   },
-  getData:function(id){
-   var sel={};
-
-    for (var x in this.data_o){
-      if(this.data_o[x]['parent_id'] == id){
-        sel[x] = this.data_o[x];
-      }
-    }
-    console.log(sel);
-
-
-    return sel;
+  getData:function(){
+    return this.data_o;
   }
 
 
