@@ -37,17 +37,7 @@ APP.liscens_mpde_cl = Class.create({
     APP.db_o.execute_px("POST","data/liscens.json",this.data_o);
   },
   getData:function(id){
-   var sel={};
-
-    for (var x in this.data_o){
-      if(this.data_o[x]['parent_id'] == id){
-        sel[x] = this.data_o[x];
-      }
-    }
-    console.log(sel);
-
-
-    return sel;
+   return this.data_o;
   }
 
 

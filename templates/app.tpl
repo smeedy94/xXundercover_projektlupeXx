@@ -7,6 +7,7 @@
 			<div class="uk-button-group uk-align-center uk-margin-remove">
 				<button class="material-icons" data-action="out">zoom_out</button>
 				<button class="material-icons" data-action="in">zoom_in</button>
+				<button class="uk-button" data-uk-modal="{target: '##add_licens_vie_modal'}">Lizenzen</button>
 			</div>
 
 
@@ -184,4 +185,18 @@
 			     </div>
 			</form>
     </div>
+</div>
+
+
+<!--Lizenz Übersicht-->
+
+<div id="add_licens_vie_modal" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header"><p>Lizenz Übersicht</p></div>
+
+		<div class="uk-modal-page"></div>
+
+	</div>
 </div>

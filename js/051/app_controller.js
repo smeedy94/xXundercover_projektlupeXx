@@ -9,6 +9,8 @@ APP.appController_cl = Class.create({
 
          this.canvas = null;
 
+         this.licens = new APP.licens_cl();
+
          APP.es_o.subscribe_px(this, 'app_cont');
 
 
@@ -51,6 +53,7 @@ APP.appController_cl = Class.create({
 
    	this.view_o.render_px();
 		this.zoom_o[this.zoomState].render_px();
+      this.licens.render_px();
       // this.createEventHandler_p();
 
    },
