@@ -1,0 +1,30 @@
+{
+    "0": {
+        "Name": "Test",
+        "Hersteller": "Test",
+        "Lizenznummer": "Test",
+        "id_s": 0,
+        "device_id": 1
+    },
+    "1": {
+        "Name": "Test",
+        "Hersteller": "2",
+        "Lizenznummer": "3",
+        "id_s": 1,
+        "device_id": 4
+    },
+    "2": {
+        "Name": "Test",
+        "Hersteller": "2",
+        "Lizenznummer": "3",
+        "id_s": 2,
+        "device_id": 5
+    },
+    "3": {
+        "Name": "Test",
+        "Hersteller": "2",
+        "Lizenznummer": "3",
+        "id_s": 3,
+        "device_id": 1
+    }
+}

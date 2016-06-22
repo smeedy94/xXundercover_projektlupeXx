@@ -1,4 +1,4 @@
-	<div class="uk-block uk-block-primary uk-block" id="header">
+	<div class="uk-block uk-block-secondary uk-block" id="header">
 		<div class="uk-grid uk-grid-width-1-3">
 			<div class="uk-margin-remove">
 				<h3 class="uk-h3 uk-text-contrast" id="zoomStateText">Zoom 0</h3>
@@ -63,11 +63,15 @@
 
 <!--Lizenzen-->
 
-<div id="add_projekt_modal" class="uk-modal">
+<div id="add_licens_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
 		<div class="uk-modal-header"><p>Lizenz hinzufügen</p></div>
+		<div class="uk-button-group">
+			<button class="uk-button" data-uk-modal="{target: '##add_device_modal'}">Gerät</button>
+			<button class="uk-button uk-active">Lizenz</button>
+		</div>
 
 			<form class="uk-form uk-form-stacked">
 
@@ -90,8 +94,8 @@
 			        </div>
 			    </div>
 			     <div class="uk-modal-footer">
-			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
-			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
+			     	<button class="uk-button" data-action="save_li" id='addbtninform'>Erstellen</button>
+			     	<button class="uk-button" data-action="update_li" id='editbtninform'>Speichern</button>
 					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
 			     </div>
 			</form>
@@ -136,6 +140,12 @@
         <a class="uk-modal-close uk-close"></a>
        
 		<div class="uk-modal-header"><p>Geräte hinzufügen</p></div>
+
+		<div class="uk-button-group">
+			<button class="uk-button uk-active">Gerät</button>
+			<button class="uk-button" data-uk-modal="{target: '##add_licens_modal'} ">Lizenz</button>
+		</div>
+
 			<form class="uk-form uk-form-stacked">
 
 			    <div class="uk-form-row">
@@ -147,13 +157,13 @@
 			        <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Hersteller</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
+			        	<input type="text" placeholder="Hersteller" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
 			        <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Bezeichnung</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
+			        	<input type="text" placeholder="Bezeichnung" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
 

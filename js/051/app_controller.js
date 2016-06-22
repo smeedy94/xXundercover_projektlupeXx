@@ -41,7 +41,7 @@ APP.appController_cl = Class.create({
    render_px: function (data_opl) {
      this.canvas = oCanvas.create({
             canvas: "#canvas",
-            background: "#FFF",
+            background: "#00F",
             fps: 60
       });
       this.zoom_o = [new APP.zoom0_cl(this.canvas),new APP.zoom1_cl(this.canvas),new APP.zoom2_cl(this.canvas) ];

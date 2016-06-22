@@ -44,8 +44,8 @@
         }
     },
     "2": {
-        "x": 497,
-        "y": 172,
+        "x": 502,
+        "y": 174,
         "width": 64,
         "height": 64,
         "image": "/images/Mobile-Multiple-Devices-icon.png",
@@ -66,8 +66,8 @@
         }
     },
     "3": {
-        "x": 329,
-        "y": 174,
+        "x": 301,
+        "y": 217,
         "width": 64,
         "height": 64,
         "image": "/images/Mobile-Multiple-Devices-icon.png",
@@ -84,6 +84,28 @@
             },
             "font": "bold 15px sans-serif",
             "text": "T",
+            "fill": "#F0F"
+        }
+    },
+    "4": {
+        "x": 538,
+        "y": 156,
+        "width": 64,
+        "height": 64,
+        "image": "/images/Mobile-Multiple-Devices-icon.png",
+        "opacity": 0.55,
+        "parent_id": 2,
+        "id_s": 4,
+        "name": "Tisch 1",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "Tisch 1",
             "fill": "#F0F"
         }
     }
