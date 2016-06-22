@@ -55,7 +55,7 @@ APP.zoom0_cl = Class.create({
       var data = this.model.getData();
 
       for (var x in data){
-         var box = this.canvas.display.rectangle(data[x]);
+         var box = this.canvas.display.image(data[x]);
          var text = this.canvas.display.text( data[x].text_c );
          
          that = this;
@@ -94,25 +94,21 @@ APP.zoom0_cl = Class.create({
    },
 
    addBox: function(data_apl){
-      var next_id = APP.db_o.getNextId("data/projekte.json");
+      var next_id = APP.db_o.getNextId("data/room.json");
       var name=data_apl[0]['value'];
-      var auftraggeber=data_apl[1]['value'];
-      var frist=data_apl[2]['value'];
-      var kosten=data_apl[3]['value'];
+      var Lage=data_apl[1]['value'];
+      var Nummer=data_apl[2]['value'];
 
       
       var conf= {
           x: 50, 
           y: 150, 
-          width: 50, 
-          height: 50, 
-          fill: "#000",
+          image: "/images/room.png",
           opacity: 0.55,
           id_s:next_id,
           name:name,
-          auftraggeber:auftraggeber,
-          frist:frist,
-          kosten:kosten,
+          Lage:Lage,
+          Nummer:Nummer,
 
           text_c: {
             x: 25,
@@ -120,11 +116,11 @@ APP.zoom0_cl = Class.create({
             origin: { x: "center", y: "bottom" },
             font: "bold 15px sans-serif",
             text: name,
-            fill: "#F00"
+            fill: "#F0F"
           }
       };
       
-      var box = this.canvas.display.rectangle(conf);
+      var box = this.canvas.display.image(conf);
       var text = this.canvas.display.text( conf.text_c );
 
 
@@ -156,13 +152,13 @@ APP.zoom0_cl = Class.create({
 
    },
    openModel: function(case_s){
-      var modal = UIkit.modal("#add_projekt_modal");
+      var modal = UIkit.modal("#add_room_modal");
       if(case_s=='add'){
-         $("#add_projekt_modal .uk-modal-header").html('Projekt erstellen');
+         $("#add_room_modal .uk-modal-header").html('Projekt erstellen');
          $("#editbtninform").hide();
          $("#addbtninform").show();
       }else{
-         $("#add_projekt_modal .uk-modal-header").html('Projekt bearbeiten');
+         $("#add_room_modal .uk-modal-header").html('Projekt bearbeiten');
          $("#editbtninform").show();
          $("#addbtninform").hide();
       }
@@ -181,7 +177,7 @@ APP.zoom0_cl = Class.create({
           APP.es_o.publish_px('zoom0', ['add',null]);
           break;
         case 'edit':
-            var data = $("#add_projekt_modal form").serializeArray();
+            var data = $("#add_room_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['edit',data]);
           break;
         case 'delete':
@@ -198,22 +194,22 @@ APP.zoom0_cl = Class.create({
           window.close();
           break;
          case 'save':
-            var data = $("#add_projekt_modal form").serializeArray();
+            var data = $("#add_room_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['save',data]);
             break;
          case 'update':
-            var data = $("#add_projekt_modal form").serializeArray();
+            var data = $("#add_room_modal form").serializeArray();
             APP.es_o.publish_px('zoom0', ['update',data]);
             break;
       }
    },
    createEventHandler_p:function(){
       $("#header button").on('click', this.onClick.bind(this));
-      $("#add_projekt_modal").on('click','button', this.onClick.bind(this));
+      $("#add_room_modal").on('click','button', this.onClick.bind(this));
    },
    destroyEventHandler_p:function(){
       $("#header button").off();
-      $("#add_projekt_modal").off();
+      $("#add_room_modal").off();
    }
 
 });

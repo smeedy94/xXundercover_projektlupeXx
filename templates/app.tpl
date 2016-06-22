@@ -26,7 +26,7 @@
 
 <!--Räume-->
 
-<div id="add_projekt_modal" class="uk-modal">
+<div id="add_room_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        

@@ -1,16 +1,13 @@
 {
     "0": {
-        "x": 74,
-        "y": 192,
-        "width": 50,
-        "height": 50,
-        "fill": "#000",
+        "x": 224,
+        "y": 118,
+        "image": "/images/room.png",
         "opacity": 0.55,
         "id_s": 0,
-        "name": "x",
-        "auftraggeber": "",
-        "frist": "",
-        "kosten": "",
+        "name": "test",
+        "Lage": "test",
+        "Nummer": "Test",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -19,8 +16,8 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "x",
-            "fill": "#F00"
+            "text": "test",
+            "fill": "#F0F"
         }
     }
 }
