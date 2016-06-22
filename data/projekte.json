@@ -1,0 +1,26 @@
+{
+    "0": {
+        "x": 387,
+        "y": 221,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.55,
+        "id_s": 0,
+        "name": "X",
+        "auftraggeber": "",
+        "frist": "",
+        "kosten": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "X",
+            "fill": "#F00"
+        }
+    }
+}

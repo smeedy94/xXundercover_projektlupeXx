@@ -90,7 +90,11 @@
        
 		<div class="uk-modal-header"><p>Arbeitsgruppe erstellen</p></div>
 
-			<form class="uk-form uk-form-stacked">:
+		<div class="uk-button-group">
+			<button class="uk-button" data-uk-modal="{target: '##add_personal_modal'}">Personal</button>
+			<button class="uk-button uk-active" >Aufgabengruppe</button>
+		</div>
+			<form class="uk-form uk-form-stacked">
 
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Name</label>
@@ -116,12 +120,7 @@
 			        	<input type="text" placeholder="Stunden" class="uk-width-1-1" name="Stunden">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Personal</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Personal" class="uk-width-1-1" name="Personal">
-			        </div>
-			    </div>
+
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
@@ -140,7 +139,10 @@
         <a class="uk-modal-close uk-close"></a>
        
 		<div class="uk-modal-header"><p>Personal erstellen</p></div>
-
+		<div class="uk-button-group">
+			<button class="uk-button uk-active">Personal</button>
+			<button class="uk-button" data-uk-modal="{target: '##add_workgrp_modal'}">Aufgabengruppe</button>
+		</div>
 			<form class="uk-form uk-form-stacked">
 
 			    <div class="uk-form-row">

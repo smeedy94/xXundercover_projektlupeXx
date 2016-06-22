@@ -8,6 +8,7 @@ APP.zoom1_cl = Class.create({
 
          //alle Obejekte die angelegt werden, werdne hier referenziert
          this.items={};
+         this.items2={};
 
 
 
@@ -58,6 +59,7 @@ APP.zoom1_cl = Class.create({
 
       this.loadTimeLine();
       this.loadBox(data_opl);
+      this.loadBox2(data_opl);
 
       $("#zoomStateText").html("Zoom 1");
       this.canvas.scenes.load("zoom1");
@@ -81,6 +83,24 @@ APP.zoom1_cl = Class.create({
          box['text_o'] = text;
          this.scene.add(box);
          this.items[x] = box;
+      }
+
+   },
+   loadBox2:function(id){
+      var data = this.model.getData2(id);
+
+      for (var x in data){
+         var cir = this.canvas.display.ellipse(data[x]);
+         var text = this.canvas.display.text( data[x].text_c );
+         
+         that3 = this;
+
+
+
+         cir.addChild(text);
+         cir['text_o'] = text;
+         this.scene.add(cir);
+         this.items2[x] = cir;
       }
 
    },
@@ -110,6 +130,10 @@ APP.zoom1_cl = Class.create({
          that2.akt_o = this;
 
          APP.es_o.publish_px('ui', ['en']);
+   },
+   isbox:function(){
+      console.log(this.akt_o);
+      return true;
    },
 
    delete: function(){
@@ -172,6 +196,61 @@ APP.zoom1_cl = Class.create({
       this.items[box.id_s] = box;
 
       this.model.addBox(box.id_s, conf);
+   },
+   addBox2: function(data_apl){
+      var next_id = APP.db_o.getNextId("data/work_group.json");
+      var name=data_apl[0]['value'];
+      var Frist=data_apl[1]['value'];
+      var Status= data_apl[2]['value'];
+      var Stunden= data_apl[3]['value'];
+      var color = this.akt_o['fill'];
+      var box_id = this.akt_o['id_s'];
+
+      //berechnung der position
+      var x = 50;
+      for (var item in this.items2)
+        x += 100;
+      
+      var conf= {
+          x: x, 
+          y: 730, 
+          radius:30,
+          fill: color,
+          opacity: 0.50,
+          id_s:next_id,
+          parent_id:this.parent_id,
+          box_id: box_id,
+          name:name,
+          Frist:Frist,
+          Status:Status,
+          Stunden:Stunden,
+
+
+
+          text_c: {
+            x: 0,
+            y: 50,
+            origin: { x: "center", y: "bottom" },
+            font: "bold 15px sans-serif",
+            text: name,
+            fill: "#F00"
+          }
+      };
+      
+      var cir = this.canvas.display.ellipse(conf);
+      var text = this.canvas.display.text( conf.text_c );
+
+
+      that3 = this;
+
+
+      cir.addChild(text);
+      cir['text_o'] = text;
+      this.scene.add(cir);
+
+      this.items2[cir.id_s] = cir;
+
+      this.model.addBox2(cir.id_s, conf);
    },
    updateBoxPos: function(){
       var id = this.id; 
@@ -240,13 +319,27 @@ APP.zoom1_cl = Class.create({
             break;
       }
    },
+   onClick2:function(event_opl){
+    var action = $(event_opl.target).attr("data-action");
+    event_opl.preventDefault();
+    switch(action){
+      case 'save':
+        var data = $("#add_workgrp_modal form").serializeArray();
+        this.addBox2(data);
+        break;
+
+    }
+   },
    createEventHandler_p:function(){
       $("#header button").on('click', this.onClick.bind(this));
       $("#add_personal_modal").on('click','button', this.onClick.bind(this));
+      $("#add_workgrp_modal").on('click','button', this.onClick2.bind(this));
+
    },
    destroyEventHandler_p:function(){
       $("#header button").off();
       $("#add_personal_modal").off();
+      $("#add_workgrp_modal").off();
    }
 
 });
