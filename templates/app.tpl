@@ -24,13 +24,13 @@
 	</div>
 
 
-<!--Projekt-->
+<!--Räume-->
 
 <div id="add_projekt_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
-		<div class="uk-modal-header"><p>Projekt erstellen</p></div>
+		<div class="uk-modal-header"><p>Raum erstellen</p></div>
 
 			<form class="uk-form uk-form-stacked">
 
@@ -41,33 +41,52 @@
 			        </div>
 			    </div>
 			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Auftraggeber</label>
+			        <label class="uk-form-label" for="">Lage</label>
+			        <div class="uk-form-controls">
+			        	<input type="text" placeholder="Lage des Raumes" class="uk-width-1-1" name="Auftraggeber">
+			        </div>
+			    </div>
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Nummer</label>
+			        <div class="uk-form-controls">
+			        	<input type="text" placeholder="Raumnummer" class="uk-width-1-1" name="Frist">
+			        </div>
+			    </div>
+			     <div class="uk-modal-footer">
+			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
+			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
+					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
+			     </div>
+			</form>
+    </div>
+</div>
+
+<!--Lizenzen-->
+
+<div id="add_projekt_modal" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header"><p>Lizenz hinzufügen</p></div>
+
+			<form class="uk-form uk-form-stacked">
+
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Name</label>
+			        <div class="uk-form-controls">
+			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
+			        </div>
+			    </div>
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Hersteller</label>
 			        <div class="uk-form-controls">
 			        	<input type="text" placeholder="Auftraggeber" class="uk-width-1-1" name="Auftraggeber">
 			        </div>
 			    </div>
 			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Frist</label>
+			        <label class="uk-form-label" for="">Lizenznummer</label>
 			        <div class="uk-form-controls">
 			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Aufgabengruppe</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Aufgabengruppe" class="uk-width-1-1" name="Aufgabengruppe">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Personal</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Personal" class="uk-width-1-1" name="Personal">
-			        </div>
-			    </div>
-				<div class="uk-form-row">
-			        <label class="uk-form-label" for="">Kosten</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Kosten" class="uk-width-1-1" name="Kosten">
 			        </div>
 			    </div>
 			     <div class="uk-modal-footer">
@@ -82,13 +101,13 @@
 
 
 
-<!--Arbeitsgruppe-->
+<!--Gerätegruppen-->
 
 <div id="add_workgrp_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
-		<div class="uk-modal-header"><p>Arbeitsgruppe erstellen</p></div>
+		<div class="uk-modal-header"><p>Gerätegruppen erstellen</p></div>
 
 		<div class="uk-button-group">
 			<button class="uk-button" data-uk-modal="{target: '##add_personal_modal'}">Personal</button>
@@ -102,26 +121,7 @@
 			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Frist</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Status</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Status" class="uk-width-1-1" name="Status">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Stunden</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Stunden" class="uk-width-1-1" name="Stunden">
-			        </div>
-			    </div>
-
-			     <div class="uk-modal-footer">
+			    	<div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
 					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
@@ -132,13 +132,13 @@
 
 
 
-<!--Personal-->
+<!--Geräte-->
 
 <div id="add_personal_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
-		<div class="uk-modal-header"><p>Personal erstellen</p></div>
+		<div class="uk-modal-header"><p>Geräte hinzufügen</p></div>
 		<div class="uk-button-group">
 			<button class="uk-button uk-active">Personal</button>
 			<button class="uk-button" data-uk-modal="{target: '##add_workgrp_modal'}">Aufgabengruppe</button>
@@ -151,99 +151,16 @@
 			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Fachbereich</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Fachbereich" class="uk-width-1-1" name="Fachbereich">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Farbe</label>
-			        <div class="uk-form-controls">
-			        	<input type="color" placeholder="" class="uk-width-1-1" name="color">
-			        </div>
-			    </div>
-
-			     <div class="uk-modal-footer">
-			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
-			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
-			     </div>
-			</form>
-    </div>
-</div>
-
-
-<!--Aufgabe-->
-
-<div id="add_aufgabe_modal" class="uk-modal">
-    <div class="uk-modal-dialog">
-        <a class="uk-modal-close uk-close"></a>
-       
-		<div class="uk-modal-header"><p>Aufgabe erstellen</p></div>
-
-			<form class="uk-form uk-form-stacked">
-
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Name</label>
+			        <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Hersteller</label>
 			        <div class="uk-form-controls">
 			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Status</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Status" class="uk-width-1-1" name="Status">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Frist</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Person</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Person" class="uk-width-1-1" name="Person">
-			        </div>
-			    </div>
-			     <div class="uk-modal-footer">
-			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
-			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>
-					<button class="uk-button uk-modal-close" data-action="cancel">Abbrechen</button>
-			     </div>
-			</form>
-    </div>
-</div>
-
-
-<!--Person-->
-
-<div id="add_person_modal" class="uk-modal">
-    <div class="uk-modal-dialog">
-        <a class="uk-modal-close uk-close"></a>
-       
-		<div class="uk-modal-header"><p>Person erstellen</p></div>
-
-			<form class="uk-form uk-form-stacked">
-
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Name</label>
+			        <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Bezeichnung</label>
 			        <div class="uk-form-controls">
 			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Alter</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Alter" class="uk-width-1-1" name="Alter">
-			        </div>
-			    </div>
-			    <div class="uk-form-row">
-			        <label class="uk-form-label" for="">Position</label>
-			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Position" class="uk-width-1-1" name="Position">
 			        </div>
 			    </div>
 			     <div class="uk-modal-footer">
