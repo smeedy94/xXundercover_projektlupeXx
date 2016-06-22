@@ -1,8 +1,8 @@
 APP.zoom1_mpde_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function () {
-      this.data_o =APP.db_o.execute_px("GET","data/personal.json");
-      this.data_o2 =APP.db_o.execute_px("GET","data/work_group.json");
+      this.data_o =APP.db_o.execute_px("GET","data/work_group.json");
+      this.data_o2 =APP.db_o.execute_px("GET","data/personal.json");
       if (this.data_o == null)
         this.data_o = {};
       if (this.data_o2 == null)
@@ -20,16 +20,16 @@ APP.zoom1_mpde_cl = Class.create({
    },
    addBox: function(id,conf){
     this.data_o[id] =conf;
-    APP.db_o.execute_px("POST","data/personal.json",this.data_o);
+    APP.db_o.execute_px("POST","data/work_group.json",this.data_o);
   },
    addBox2: function(id,conf){
-    this.data_o[id] =conf;
-    APP.db_o.execute_px("POST","data/work_group.json",this.data_o);
+    this.data_o2[id] =conf;
+    APP.db_o.execute_px("POST","data/personal.json",this.data_o2);
   },
   updateBoxPos: function(id, x, y){
     this.data_o[id]['x'] = x;
     this.data_o[id]['y'] = y;
-    APP.db_o.execute_px("POST","data/personal.json",this.data_o);
+    APP.db_o.execute_px("POST","data/work_group.json",this.data_o);
 
   },
   updateBox:function(id, conf){

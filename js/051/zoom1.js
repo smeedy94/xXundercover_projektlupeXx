@@ -24,7 +24,7 @@ APP.zoom1_cl = Class.create({
             this.openModel('add');
             break;
          case 'save':
-            this.addBox(data_apl[1])
+            this.addBox2(data_apl[1])
             break;
          case 'delete':
             this.delete();
@@ -95,6 +95,7 @@ APP.zoom1_cl = Class.create({
          
          that3 = this;
 
+         cir.bind("click tap", this.selectCir);
 
 
          cir.addChild(text);
@@ -131,9 +132,16 @@ APP.zoom1_cl = Class.create({
 
          APP.es_o.publish_px('ui', ['en']);
    },
+   selectCir:function(){
+        this.fadeTo(1,"short","ease-in-out-cubic", function(){})
+         if(that3.akt_o != null && that3.akt_o != this)
+            that3.akt_o.fadeTo(0.55,"short","ease-in-out-cubic", function(){})
+         that3.akt_o = this;
+
+         APP.es_o.publish_px('ui', ['en']);
+   },
    isbox:function(){
-      console.log(this.akt_o);
-      return true;
+      return this.akt_o.type != "ellipse" 
    },
 
    delete: function(){
@@ -149,11 +157,23 @@ APP.zoom1_cl = Class.create({
    },
 
    addBox: function(data_apl){
-      var next_id = APP.db_o.getNextId("data/personal.json");
+      if (this.akt_o == null ||  this.isbox()){
+        UIkit.notify('Sie Müssen Personal auswählen',{
+         status  : 'danger',
+         timeout : 3500,
+        });
+
+        UIkit.modal("#add_workgrp_modal").hide();
+
+        return false;
+      }
+      var next_id = APP.db_o.getNextId("data/work_group.json");
       var name=data_apl[0]['value'];
-      var fachbereich=data_apl[1]['value'];
-      var color= data_apl[2]['value'];
- 
+      var Frist=data_apl[1]['value'];
+      var Status= data_apl[2]['value'];
+      var Stunden= data_apl[3]['value'];
+      var color = this.akt_o['fill'];
+      var cir_id = this.akt_o['id_s'];
 
       
       var conf= {
@@ -164,9 +184,13 @@ APP.zoom1_cl = Class.create({
           fill: color,
           opacity: 0.40,
           id_s:next_id,
+          cir_id:cir_id,
           parent_id:this.parent_id,
           name:name,
-          fachbereich:fachbereich,
+          Frist:Frist,
+          Status:Status,
+          Stunden:Stunden,
+          
 
 
           text_c: {
@@ -198,13 +222,15 @@ APP.zoom1_cl = Class.create({
       this.model.addBox(box.id_s, conf);
    },
    addBox2: function(data_apl){
-      var next_id = APP.db_o.getNextId("data/work_group.json");
+
+      var next_id = APP.db_o.getNextId("data/personal.json");
+
+
       var name=data_apl[0]['value'];
-      var Frist=data_apl[1]['value'];
-      var Status= data_apl[2]['value'];
-      var Stunden= data_apl[3]['value'];
-      var color = this.akt_o['fill'];
-      var box_id = this.akt_o['id_s'];
+      var fachbereich=data_apl[1]['value'];
+      var color= data_apl[2]['value'];
+      
+
 
       //berechnung der position
       var x = 50;
@@ -219,11 +245,9 @@ APP.zoom1_cl = Class.create({
           opacity: 0.50,
           id_s:next_id,
           parent_id:this.parent_id,
-          box_id: box_id,
           name:name,
-          Frist:Frist,
-          Status:Status,
-          Stunden:Stunden,
+          fachbereich:fachbereich,
+
 
 
 
@@ -325,7 +349,7 @@ APP.zoom1_cl = Class.create({
     switch(action){
       case 'save':
         var data = $("#add_workgrp_modal form").serializeArray();
-        this.addBox2(data);
+        this.addBox(data);
         break;
 
     }

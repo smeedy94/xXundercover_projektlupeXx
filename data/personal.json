@@ -1,17 +1,14 @@
 {
     "0": {
-        "x": 277,
-        "y": 180,
+        "x": 50,
+        "y": 730,
         "radius": 30,
-        "fill": "#e22336",
+        "fill": "#000000",
         "opacity": 0.5,
         "id_s": 0,
         "parent_id": 0,
-        "box_id": 0,
-        "name": "s",
-        "Frist": "",
-        "Status": "",
-        "Stunden": "",
+        "name": "y",
+        "fachbereich": "y",
         "text_c": {
             "x": 0,
             "y": 50,
@@ -20,7 +17,51 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "s",
+            "text": "y",
+            "fill": "#F00"
+        }
+    },
+    "1": {
+        "x": 150,
+        "y": 730,
+        "radius": 30,
+        "fill": "#e77ed7",
+        "opacity": 0.5,
+        "id_s": 1,
+        "parent_id": 0,
+        "name": "X",
+        "fachbereich": "y",
+        "text_c": {
+            "x": 0,
+            "y": 50,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "X",
+            "fill": "#F00"
+        }
+    },
+    "2": {
+        "x": 250,
+        "y": 730,
+        "radius": 30,
+        "fill": "#9e0a05",
+        "opacity": 0.5,
+        "id_s": 2,
+        "parent_id": 0,
+        "name": "z",
+        "fachbereich": "",
+        "text_c": {
+            "x": 0,
+            "y": 50,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "z",
             "fill": "#F00"
         }
     }
