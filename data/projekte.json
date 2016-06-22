@@ -1,13 +1,13 @@
 {
-    "0": {
-        "x": 74,
-        "y": 192,
+    "1": {
+        "x": 284,
+        "y": 213,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
-        "id_s": 0,
-        "name": "x",
+        "id_s": 1,
+        "name": "X",
         "auftraggeber": "",
         "frist": "",
         "kosten": "",
@@ -19,7 +19,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "x",
+            "text": "X",
             "fill": "#F00"
         }
     }

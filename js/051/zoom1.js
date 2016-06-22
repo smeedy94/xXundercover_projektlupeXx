@@ -266,6 +266,8 @@ APP.zoom1_cl = Class.create({
 
 
       that3 = this;
+     cir.bind("click tap", this.selectCir);
+
 
 
       cir.addChild(text);
