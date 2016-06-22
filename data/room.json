@@ -1,0 +1,44 @@
+{
+    "0": {
+        "x": 140,
+        "y": 161,
+        "image": "/images/room.png",
+        "opacity": 0.55,
+        "id_s": 0,
+        "name": "x",
+        "Lage": "",
+        "Nummer": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "x",
+            "fill": "#F0F"
+        }
+    },
+    "1": {
+        "x": 352,
+        "y": 157,
+        "image": "/images/room.png",
+        "opacity": 0.55,
+        "id_s": 1,
+        "name": "y",
+        "Lage": "",
+        "Nummer": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "y",
+            "fill": "#F0F"
+        }
+    }
+}

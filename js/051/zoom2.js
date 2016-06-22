@@ -8,7 +8,8 @@ APP.zoom2_cl = Class.create({
          this.canvas = can;
          this.scene = can.scenes.create("zoom2", function(){});
 
-         this.loadBox();
+         this.items={}
+
 
 
          APP.es_o.subscribe_px(this, 'zoom2');
@@ -41,18 +42,25 @@ APP.zoom2_cl = Class.create({
       return true;
    },
    close_px: function () {
+      for(var x in this.items){
+        this.scene.remove(this.items[x]);
+      }
       this.canvas.scenes.unload("zoom2");
       this.destroyEventHandler_p();
    },
    render_px: function (data_opl) {
       $("#zoomStateText").html("Zoom 2");
       
+      this.parent_id = data_opl;
+
+      this.loadBox(data_opl);
+
       
       this.canvas.scenes.load("zoom2");
       this.createEventHandler_p();
    },
-   loadBox:function(){
-      var data = this.model.getData();
+   loadBox:function(id){
+      var data = this.model.getData(id);
 
       for (var x in data){
          var box = this.canvas.display.image(data[x]);
@@ -68,6 +76,7 @@ APP.zoom2_cl = Class.create({
          box.addChild(text);
          box['text_o'] = text;
          this.scene.add(box);
+         this.items[x] = box;
       }
 
    },
@@ -95,18 +104,38 @@ APP.zoom2_cl = Class.create({
    },
 
    addBox: function(data_apl){
-      var next_id = APP.db_o.getNextId("data/work_group.json");
+      var next_id = APP.db_o.getNextId("data/device.json");
       var name=data_apl[0]['value'];
+      var Hersteller = data_apl[1]['value'];
+      var Bezeichnung = data_apl[2]['value'];
+      var typ = data_apl[3]['value'];
+      var pic= null;
+
+      switch(typ){
+        case 'pc':
+          pic= "/images/RechnerT.png";
+          break;
+        case 'drucker':
+          pic="/images/DruckerT.png";
+      }
       
       var conf= {
           x: 50, 
           y: 150,
           width:64,
           height:64, 
-          image: "/images/Mobile-Multiple-Devices-icon.png",
+          image: pic,
           opacity: 0.55,
+          parent_id: this.parent_id,
           id_s:next_id,
           name:name,
+          Hersteller:Hersteller,
+          Bezeichnung:Bezeichnung,
+          typ:typ,
+
+
+
+
 
 
           text_c: {
@@ -133,6 +162,8 @@ APP.zoom2_cl = Class.create({
       box['text_o'] = text;
       this.scene.add(box);
 
+      this.items[box.id_s] =box;
+
       this.model.addBox(box.id_s, conf);
    },
    updateBoxPos: function(){
@@ -151,15 +182,15 @@ APP.zoom2_cl = Class.create({
 
    },
    openModel: function(case_s){
-      var modal = UIkit.modal("#add_workgrp_modal");
+      var modal = UIkit.modal("#add_device_modal");
       if(case_s=='add'){
-         $("#add_workgrp_modal .uk-modal-header").html('Gerätegruppe erstellen');
-         $("#add_workgrp_modal #editbtninform").hide();
-         $("#add_workgrp_modal #addbtninform").show();
+         $("#add_device_modal .uk-modal-header").html('Gerät erstellen');
+         $("#add_device_modal #editbtninform").hide();
+         $("#add_device_modal #addbtninform").show();
       }else{
-         $("#add_workgrp_modal .uk-modal-header").html('Gerätegruppe bearbeiten');
-         $("#add_workgrp_modal #editbtninform").show();
-         $("#add_workgrp_modal #addbtninform").hide();
+         $("#add_device_modal .uk-modal-header").html('Gerät bearbeiten');
+         $("#add_device_modal #editbtninform").show();
+         $("#add_device_modal #addbtninform").hide();
       }
       if ( modal.isActive() ) {
              modal.hide();
@@ -176,7 +207,7 @@ APP.zoom2_cl = Class.create({
           APP.es_o.publish_px('zoom2', ['add',null]);
           break;
         case 'edit':
-            var data = $("#add_workgrp_modal form").serializeArray();
+            var data = $("#add_device_modal form").serializeArray();
             APP.es_o.publish_px('zoom2', ['edit',data]);
           break;
         case 'delete':
@@ -193,22 +224,22 @@ APP.zoom2_cl = Class.create({
           window.close();
           break;
          case 'save':
-            var data = $("#add_workgrp_modal form").serializeArray();
+            var data = $("#add_device_modal form").serializeArray();
             APP.es_o.publish_px('zoom2', ['save',data]);
             break;
          case 'update':
-            var data = $("#add_workgrp_modal form").serializeArray();
+            var data = $("#add_device_modal form").serializeArray();
             APP.es_o.publish_px('zoom2', ['update',data]);
             break;
       }
    },
    createEventHandler_p:function(){
       $("#header button").on('click', this.onClick.bind(this));
-      $("#add_workgrp_modal").on('click','button', this.onClick.bind(this));
+      $("#add_device_modal").on('click','button', this.onClick.bind(this));
    },
    destroyEventHandler_p:function(){
       $("#header button").off();
-      $("#add_workgrp_modal").off();
+      $("#add_device_modal").off();
    }
 
 });

@@ -131,15 +131,11 @@
 
 <!--Geräte-->
 
-<div id="add_personal_modal" class="uk-modal">
+<div id="add_device_modal" class="uk-modal">
     <div class="uk-modal-dialog">
         <a class="uk-modal-close uk-close"></a>
        
 		<div class="uk-modal-header"><p>Geräte hinzufügen</p></div>
-		<div class="uk-button-group">
-			<button class="uk-button uk-active">Personal</button>
-			<button class="uk-button" data-uk-modal="{target: '##add_workgrp_modal'}">Aufgabengruppe</button>
-		</div>
 			<form class="uk-form uk-form-stacked">
 
 			    <div class="uk-form-row">
@@ -160,6 +156,17 @@
 			        	<input type="text" placeholder="Name" class="uk-width-1-1" name="name">
 			        </div>
 			    </div>
+
+			    <div class="uk-form-row">
+			        <label class="uk-form-label" for="">Typ</label>
+			        <div class="uk-form-controls">
+			        	<select name ="typ" class="uk-width-1-1">
+			        		<option value="pc">PC</option>
+			        		<option value="drucker">Drucker</option>
+			        	</select>
+			        </div>
+			    </div>
+
 			     <div class="uk-modal-footer">
 			     	<button class="uk-button" data-action="save" id='addbtninform'>Erstellen</button>
 			     	<button class="uk-button" data-action="update" id='editbtninform'>Speichern</button>

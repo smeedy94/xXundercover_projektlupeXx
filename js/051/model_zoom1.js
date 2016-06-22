@@ -44,6 +44,7 @@ APP.zoom1_mpde_cl = Class.create({
         sel[x] = this.data_o[x];
       }
     }
+    console.info('render id (model1):' +id);
     console.log(sel);
 
 

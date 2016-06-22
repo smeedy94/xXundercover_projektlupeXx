@@ -154,11 +154,11 @@ APP.zoom0_cl = Class.create({
    openModel: function(case_s){
       var modal = UIkit.modal("#add_room_modal");
       if(case_s=='add'){
-         $("#add_room_modal .uk-modal-header").html('Projekt erstellen');
+         $("#add_room_modal .uk-modal-header").html('Raum erstellen');
          $("#editbtninform").hide();
          $("#addbtninform").show();
       }else{
-         $("#add_room_modal .uk-modal-header").html('Projekt bearbeiten');
+         $("#add_room_modal .uk-modal-header").html('Raum bearbeiten');
          $("#editbtninform").show();
          $("#addbtninform").hide();
       }

@@ -1,0 +1,152 @@
+{
+    "0": {
+        "x": 213,
+        "y": 248,
+        "width": 64,
+        "height": 64,
+        "image": "/images/DruckerT.png",
+        "opacity": 0.55,
+        "parent_id": 0,
+        "id_s": 0,
+        "name": "d",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "drucker",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "d",
+            "fill": "#F0F"
+        }
+    },
+    "1": {
+        "x": 261,
+        "y": 364,
+        "width": 64,
+        "height": 64,
+        "image": "/images/RechnerT.png",
+        "opacity": 0.55,
+        "parent_id": 2,
+        "id_s": 1,
+        "name": "1",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "pc",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "1",
+            "fill": "#F0F"
+        }
+    },
+    "2": {
+        "x": 424,
+        "y": 365,
+        "width": 64,
+        "height": 64,
+        "image": "/images/DruckerT.png",
+        "opacity": 0.55,
+        "parent_id": 2,
+        "id_s": 2,
+        "name": "Xx",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "drucker",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "Xx",
+            "fill": "#F0F"
+        }
+    },
+    "3": {
+        "x": 50,
+        "y": 150,
+        "width": 64,
+        "height": 64,
+        "image": "/images/RechnerT.png",
+        "opacity": 0.55,
+        "parent_id": 3,
+        "id_s": 3,
+        "name": "1",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "pc",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "1",
+            "fill": "#F0F"
+        }
+    },
+    "4": {
+        "x": 242,
+        "y": 291,
+        "width": 64,
+        "height": 64,
+        "image": "/images/RechnerT.png",
+        "opacity": 0.55,
+        "parent_id": 3,
+        "id_s": 4,
+        "name": "2",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "pc",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "2",
+            "fill": "#F0F"
+        }
+    },
+    "5": {
+        "x": 341,
+        "y": 168,
+        "width": 64,
+        "height": 64,
+        "image": "/images/RechnerT.png",
+        "opacity": 0.55,
+        "parent_id": 3,
+        "id_s": 5,
+        "name": "3",
+        "Hersteller": "",
+        "Bezeichnung": "",
+        "typ": "pc",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "3",
+            "fill": "#F0F"
+        }
+    }
+}
