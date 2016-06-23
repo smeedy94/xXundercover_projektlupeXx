@@ -214,7 +214,6 @@ APP.zoom2_cl = Class.create({
         UIkit.modal("#add_licens_modal").hide();
 
 
-       APP.es_o.publish_px('licens', null);
 
 
    },

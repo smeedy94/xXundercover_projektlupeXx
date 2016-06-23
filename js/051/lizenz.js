@@ -31,9 +31,11 @@ APP.licens_cl = Class.create({
 
      $('#add_licens_vie_modal .uk-modal-page').html(markup_s);
 
+     this.destroyEventHandler_p();
+     this.createEventHandler_p();
+
 
       
-      this.createEventHandler_p();
    },
    loadBox:function(id){
 
@@ -84,6 +86,7 @@ APP.licens_cl = Class.create({
     
    },
    destroyEventHandler_p:function(){
+    $("#add_licens_vie_modal").off('click','tr');
 
    }
 
