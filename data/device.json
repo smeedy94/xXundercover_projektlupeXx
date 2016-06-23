@@ -1,41 +1,16 @@
 {
     "0": {
-        "x": 327,
-        "y": 175,
-        "width": 64,
-        "height": 64,
-        "image": "/images/LaptopT.png",
-        "opacity": 0.55,
-        "parent_id": 0,
-        "id_s": 0,
-        "name": "MSI",
-        "Hersteller": "MSI",
-        "Bezeichnung": "Laptop",
-        "typ": "laptop",
-        "text_c": {
-            "x": 40,
-            "y": 85,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "MSI",
-            "fill": "#F0F"
-        }
-    },
-    "1": {
-        "x": 160,
-        "y": 242,
+        "x": 370,
+        "y": 205,
         "width": 64,
         "height": 64,
         "image": "/images/RechnerT.png",
         "opacity": 0.55,
-        "parent_id": 1,
-        "id_s": 1,
-        "name": "ZZ",
-        "Hersteller": "ZZ",
-        "Bezeichnung": "ZZ",
+        "parent_id": 0,
+        "id_s": 0,
+        "name": "Dell l7000",
+        "Hersteller": "Dell",
+        "Bezeichnung": "Hammer geiles Gerät",
         "typ": "pc",
         "text_c": {
             "x": 40,
@@ -45,7 +20,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "ZZ",
+            "text": "Dell l7000",
             "fill": "#F0F"
         }
     }

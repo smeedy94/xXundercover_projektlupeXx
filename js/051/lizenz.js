@@ -5,11 +5,13 @@ APP.licens_cl = Class.create({
    initialize: function () {
          this.model = new APP.liscens_mpde_cl();
          
+         APP.es_o.subscribe_px(this, 'licens');
 
 
 
     },
    notify_px: function (self_opl, message_spl, data_apl) {
+      this.render_px();
    },
    canClose_px: function () {
       return true;
@@ -21,6 +23,8 @@ APP.licens_cl = Class.create({
       
 
       this.licens = this.model.getData();
+
+      console.log(this.licens);
 
 
      var markup_s = APP.tm_o.execute_px('licens.tpl', this.licens);

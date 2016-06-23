@@ -1,21 +1,21 @@
 <h3>Raum</h3>
 <ul class="uk-list uk-list-striped">
-	<li>#context['room']['name']#</li>
-	<li>#context['room']['Nummer']#</li>
-	<li>#context['room']['Lage']#</li>
+	<li>Name: #context['room']['name']#</li>
+	<li>Nummer: #context['room']['Nummer']#</li>
+	<li>Lage: #context['room']['Lage']#</li>
 </ul>
 
 <h3>Gerätegruppe</h3>
 <ul class="uk-list uk-list-striped">
-	<li>#context['device_group']['name']#</li>
+	<li>Name: #context['device_group']['name']#</li>
 </ul>
 
 <h3>Gerät</h3>
 <ul class="uk-list uk-list-striped">
-	<li>#context['device']['name']#</li>
-	<li>#context['device']['Bezeichnung']#</li>
-	<li>#context['device']['Hersteller']#</li>
-	<li>#context['device']['typ']#</li>
+	<li>Name: #context['device']['name']#</li>
+	<li>Bezeichnung: #context['device']['Bezeichnung']#</li>
+	<li>Hersteller: #context['device']['Hersteller']#</li>
+	<li>Typ: #context['device']['typ']#</li>
 </ul>
 
 <h3>Lizenzen</h3>

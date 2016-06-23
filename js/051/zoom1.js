@@ -221,7 +221,7 @@ APP.zoom1_cl = Class.create({
    },
    destroyEventHandler_p:function(){
       $("#header button:not(#li_btn)").off();
-      $("#add_workgrp_modal").off();
+      $("#add_workgrp_modal button").off();
    }
 
 });

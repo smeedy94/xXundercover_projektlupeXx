@@ -18,6 +18,9 @@ APP.liscens_mpde_cl = Class.create({
    addBox: function(id,conf){
     this.data_o[id] =conf;
     APP.db_o.execute_px("POST","data/liscens.json",this.data_o);
+
+    APP.es_o.publish_px('licens', null);
+
   },
   updateBoxPos: function(id, x, y){
     this.data_o[id]['x'] = x;
@@ -37,6 +40,8 @@ APP.liscens_mpde_cl = Class.create({
     APP.db_o.execute_px("POST","data/liscens.json",this.data_o);
   },
   getData:function(id){
+      this.data_o =APP.db_o.execute_px("GET","data/liscens.json");
+    
    return this.data_o;
   }
 

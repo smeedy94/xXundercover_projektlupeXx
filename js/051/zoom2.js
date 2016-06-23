@@ -214,6 +214,9 @@ APP.zoom2_cl = Class.create({
         UIkit.modal("#add_licens_modal").hide();
 
 
+       APP.es_o.publish_px('licens', null);
+
+
    },
 
    updateBoxPos: function(){
@@ -315,8 +318,8 @@ APP.zoom2_cl = Class.create({
    },
    destroyEventHandler_p:function(){
       $("#header button:not(#li_btn)").off();
-      $("#add_device_modal").off();
-      $("#add_licens_modal").off();
+      $("#add_device_modal button").off();
+      $("#add_licens_modal button").off();
    }
 
 });

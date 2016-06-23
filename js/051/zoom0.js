@@ -210,7 +210,7 @@ APP.zoom0_cl = Class.create({
    },
    destroyEventHandler_p:function(){
       $("#header button:not(#li_btn)").off();
-      $("#add_room_modal").off();
+      $("#add_room_modal button").off();
    }
 
 });
