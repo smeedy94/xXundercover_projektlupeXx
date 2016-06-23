@@ -7,7 +7,7 @@
 			<div class="uk-button-group uk-align-center uk-margin-remove">
 				<button class="material-icons" data-action="out">zoom_out</button>
 				<button class="material-icons" data-action="in">zoom_in</button>
-				<button class="uk-button" data-uk-modal="{target: '##add_licens_vie_modal'}">Lizenzen</button>
+				<button class="uk-button" id="li_btn" data-uk-modal="{target: '##add_licens_vie_modal'}">Lizenzen</button>
 			</div>
 
 
@@ -85,13 +85,13 @@
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Hersteller</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Auftraggeber" class="uk-width-1-1" name="Auftraggeber">
+			        	<input type="text" placeholder="Hersteller" class="uk-width-1-1" name="Auftraggeber">
 			        </div>
 			    </div>
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Lizenznummer</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Frist" class="uk-width-1-1" name="Frist">
+			        	<input type="text" placeholder="Lizenznummer" class="uk-width-1-1" name="Frist">
 			        </div>
 			    </div>
 			     <div class="uk-modal-footer">
@@ -174,6 +174,8 @@
 			        	<select name ="typ" class="uk-width-1-1">
 			        		<option value="pc">PC</option>
 			        		<option value="drucker">Drucker</option>
+			        		<option value="beamer">Beamer</option>
+			        		<option value="laptop">Laptop</option>
 			        	</select>
 			        </div>
 			    </div>
@@ -195,6 +197,20 @@
         <a class="uk-modal-close uk-close"></a>
        
 		<div class="uk-modal-header"><p>Lizenz Übersicht</p></div>
+
+		<div class="uk-modal-page"></div>
+
+	</div>
+</div>
+
+
+<!--Gerät Übersicht-->
+
+<div id="add_device_vie_modal" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header"><p>Gerät Übersicht</p></div>
 
 		<div class="uk-modal-page"></div>
 

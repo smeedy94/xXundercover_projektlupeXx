@@ -1,0 +1,44 @@
+{
+    "0": {
+        "x": 228,
+        "y": 231,
+        "image": "/images/room.png",
+        "opacity": 0.55,
+        "id_s": 0,
+        "name": "F303",
+        "Lage": "0",
+        "Nummer": "303",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "F303",
+            "fill": "#F0F"
+        }
+    },
+    "1": {
+        "x": 626,
+        "y": 248,
+        "image": "/images/room.png",
+        "opacity": 0.55,
+        "id_s": 1,
+        "name": "yy",
+        "Lage": "yy",
+        "Nummer": "yy",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "yy",
+            "fill": "#F0F"
+        }
+    }
+}

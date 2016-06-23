@@ -46,6 +46,7 @@ APP.zoom1_cl = Class.create({
         this.scene.remove(this.items[x]);
       }
       this.canvas.scenes.unload("zoom1");
+      APP.es_o.publish_px('ui', ['dis']);
       this.destroyEventHandler_p();
    },
    render_px: function (data_opl) {
@@ -215,11 +216,11 @@ APP.zoom1_cl = Class.create({
       }
    },
    createEventHandler_p:function(){
-      $("#header button").on('click', this.onClick.bind(this));
+      $("#header button:not(#li_btn)").on('click', this.onClick.bind(this));
       $("#add_workgrp_modal").on('click','button', this.onClick.bind(this));
    },
    destroyEventHandler_p:function(){
-      $("#header button").off();
+      $("#header button:not(#li_btn)").off();
       $("#add_workgrp_modal").off();
    }
 

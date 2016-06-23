@@ -1,0 +1,46 @@
+{
+    "0": {
+        "x": 335,
+        "y": 228,
+        "width": 64,
+        "height": 64,
+        "image": "/images/Mobile-Multiple-Devices-icon.png",
+        "opacity": 0.55,
+        "parent_id": 0,
+        "id_s": 0,
+        "name": "PC's",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "PC's",
+            "fill": "#F0F"
+        }
+    },
+    "1": {
+        "x": 133,
+        "y": 166,
+        "width": 64,
+        "height": 64,
+        "image": "/images/Mobile-Multiple-Devices-icon.png",
+        "opacity": 0.55,
+        "parent_id": 1,
+        "id_s": 1,
+        "name": "XX",
+        "text_c": {
+            "x": 40,
+            "y": 85,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "XX",
+            "fill": "#F0F"
+        }
+    }
+}

@@ -42,6 +42,7 @@ APP.zoom0_cl = Class.create({
    },
    close_px: function () {
       this.canvas.scenes.unload("zoom0");
+      APP.es_o.publish_px('ui', ['dis']);
       this.destroyEventHandler_p();
    },
    render_px: function (data_opl) {
@@ -204,11 +205,11 @@ APP.zoom0_cl = Class.create({
       }
    },
    createEventHandler_p:function(){
-      $("#header button").on('click', this.onClick.bind(this));
+      $("#header button:not(#li_btn)").on('click', this.onClick.bind(this));
       $("#add_room_modal").on('click','button', this.onClick.bind(this));
    },
    destroyEventHandler_p:function(){
-      $("#header button").off();
+      $("#header button:not(#li_btn)").off();
       $("#add_room_modal").off();
    }
 

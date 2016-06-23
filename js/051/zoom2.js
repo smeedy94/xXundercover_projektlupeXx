@@ -5,6 +5,7 @@ APP.zoom2_cl = Class.create({
    initialize: function (can) {
          this.model = new APP.zoom2_mpde_cl();
          this.model_li = new APP.liscens_mpde_cl();
+         this.model_data = new APP.model_data_cl();
          this.akt_o = null;
          this.canvas = can;
          this.scene = can.scenes.create("zoom2", function(){});
@@ -47,6 +48,7 @@ APP.zoom2_cl = Class.create({
         this.scene.remove(this.items[x]);
       }
       this.canvas.scenes.unload("zoom2");
+      APP.es_o.publish_px('ui', ['dis']);
       this.destroyEventHandler_p();
    },
    render_px: function (data_opl) {
@@ -118,6 +120,14 @@ APP.zoom2_cl = Class.create({
           break;
         case 'drucker':
           pic="/images/DruckerT.png";
+          break;
+        case 'beamer':
+          pic="/images/BeamerT.png";
+          break;
+        case 'laptop':
+          pic="/images/LaptopT.png";
+          break;
+
       }
       
       var conf= {
@@ -196,7 +206,7 @@ APP.zoom2_cl = Class.create({
 
       this.model_li.addBox(next_id,conf);
 
-        UIkit.notify("Lizenz erfölgreich dem Gerät zugewiesen",{
+        UIkit.notify("Lizenz erfolgreich dem Gerät zugewiesen",{
           status: 'success',
           timeout: 3500
         });
@@ -258,7 +268,7 @@ APP.zoom2_cl = Class.create({
           
           break;
         case 'in':
-          APP.es_o.publish_px('app_cont', ['in']);
+          this.openModelDetail();
           break;
         case 'close':
           window.close();
@@ -280,13 +290,31 @@ APP.zoom2_cl = Class.create({
 
       }
    },
+   openModelDetail:function(){
+      if(this.akt_o == null){
+        UIkit.notify("Bitte wählen sie ein Gerät aus!");
+        return false;
+      }
+
+     var data = this.model_data.getData(this.akt_o.id_s);
+     console.log(data);
+     var markup_s = APP.tm_o.execute_px('device.tpl',data );
+
+
+      $('#add_device_vie_modal .uk-modal-page').html(markup_s);
+
+      UIkit.modal("#add_device_vie_modal").show();
+
+
+
+   },
    createEventHandler_p:function(){
-      $("#header button").on('click', this.onClick.bind(this));
+      $("#header button:not(#li_btn)").on('click', this.onClick.bind(this));
       $("#add_device_modal").on('click','button', this.onClick.bind(this));
       $("#add_licens_modal").on('click','button', this.onClick.bind(this));
    },
    destroyEventHandler_p:function(){
-      $("#header button").off();
+      $("#header button:not(#li_btn)").off();
       $("#add_device_modal").off();
       $("#add_licens_modal").off();
    }

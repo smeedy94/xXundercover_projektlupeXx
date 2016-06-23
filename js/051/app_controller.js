@@ -58,7 +58,7 @@ APP.appController_cl = Class.create({
 
    },
    succ: function(){
-         if(this.zoomState<2)
+         if(this.zoomState<3)
          {
          var id = this.zoom_o[this.zoomState].akt_o.id_s;
          this.zoom_o[this.zoomState].close_px();
