@@ -82,7 +82,7 @@ APP.zoom0_cl = Class.create({
    },
 
    delete: function(){
-      this.canvas.removeChild(this.akt_o);
+      this.scene.remove(this.akt_o);
 
       this.model.deleteBox(this.akt_o.id_s);
 

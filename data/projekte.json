@@ -1,16 +1,16 @@
 {
-    "1": {
-        "x": 284,
-        "y": 213,
+    "0": {
+        "x": 609,
+        "y": 229,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
-        "id_s": 1,
-        "name": "X",
-        "auftraggeber": "",
-        "frist": "",
-        "kosten": "",
+        "id_s": 0,
+        "name": "ProjektMojekt2",
+        "auftraggeber": "Ich",
+        "frist": "Morgeb",
+        "kosten": "A",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -19,7 +19,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "X",
+            "text": "ProjektMojekt2",
             "fill": "#F00"
         }
     }

@@ -1,10 +1,10 @@
-APP.zoom1_cl = Class.create({
+APP.zoom2_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function (can) {
-         this.model = new APP.zoom1_mpde_cl();
+         this.model = new APP.zoom2_mpde_cl();
          this.akt_o = null;
          this.canvas = can;
-         this.scene = can.scenes.create("zoom1", function(){});
+         this.scene = can.scenes.create("zoom2", function(){});
 
          //alle Obejekte die angelegt werden, werdne hier referenziert
          this.items={};
@@ -13,7 +13,7 @@ APP.zoom1_cl = Class.create({
 
 
 
-         APP.es_o.subscribe_px(this, 'zoom1');
+         APP.es_o.subscribe_px(this, 'zoom2');
 
 
     },
@@ -43,18 +43,18 @@ APP.zoom1_cl = Class.create({
       return true;
    },
    close_px: function () {
-      console.log(this.scene);
+      //console.log(this.scene);
       //scene leeren
       for(var x in this.items){
-        console.log(x);
+        // console.log(x);
         this.scene.remove(this.items[x]);
       }
        for(var x in this.items){
-        console.log(x);
+        // console.log(x);
         this.scene.remove(this.items2[x]);
       }
       this.scene.remove();
-      this.canvas.scenes.unload("zoom1");
+      this.canvas.scenes.unload("zoom2");
       this.destroyEventHandler_p();
 
    },
@@ -65,8 +65,8 @@ APP.zoom1_cl = Class.create({
       this.loadBox(data_opl);
       this.loadBox2(data_opl);
 
-      $("#zoomStateText").html("Zoom 1");
-      this.canvas.scenes.load("zoom1");
+      $("#zoomStateText").html("Zoom 2");
+      this.canvas.scenes.load("zoom2");
       this.createEventHandler_p();
    },
    loadBox:function(id){
@@ -109,25 +109,6 @@ APP.zoom1_cl = Class.create({
       }
 
    },
-   loadTimeLine:function(){
-      for (var x = 200; x < 1200; x+=200 ){
-        var line =  this.canvas.display.line({
-            start: { x: x, y: 0 },
-            end: { x: x, y: 640 },
-            stroke: "10px #000",
-            cap: "round"
-        });
-        this.scene.add(line);
-      }
-        var line =  this.canvas.display.line({
-            start: { x: 0, y: 640 },
-            end: { x: 1240, y: 640 },
-            stroke: "13px #000",
-            cap: "round"
-        });
-        this.scene.add(line);
-
-   },
    select:function(){
          this.fadeTo(1,"short","ease-in-out-cubic", function(){})
          if(that2.akt_o != null && that2.akt_o != this)
@@ -150,16 +131,10 @@ APP.zoom1_cl = Class.create({
 
    delete: function(){
       this.scene.remove(this.akt_o);
-
       this.model.deleteBox(this.akt_o.id_s);
-
       APP.es_o.publish_px('ui', ['dis']);
-
       this.akt_o=null;
-
-
    },
-
    addBox: function(data_apl){
       if (this.akt_o == null ||  this.isbox()){
         UIkit.notify('Sie Müssen Personal auswählen',{
