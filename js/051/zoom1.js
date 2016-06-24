@@ -162,7 +162,7 @@ APP.zoom1_cl = Class.create({
 
    addBox: function(data_apl){
       if (this.akt_o == null ||  this.isbox()){
-        UIkit.notify('Sie Müssen Personal auswählen',{
+        UIkit.notify('Sie Müssen ein Personal auswählen',{
          status  : 'danger',
          timeout : 3500,
         });
@@ -195,7 +195,6 @@ APP.zoom1_cl = Class.create({
           Status:Status,
           Stunden:Stunden,
           
-
 
           text_c: {
             x: 25,

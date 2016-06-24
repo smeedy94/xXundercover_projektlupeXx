@@ -7,10 +7,9 @@
         "fill": "#000",
         "opacity": 0.55,
         "id_s": 0,
-        "name": "klo",
-        "status": "fertig",
-        "frist": "25.06.2016",
-        "person": "hans",
+        "name": "hans",
+        "alter": "5",
+        "position": "boss",
         "text_c": {
             "x": 25,
             "y": 65,
