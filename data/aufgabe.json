@@ -1,16 +1,17 @@
 {
     "0": {
-        "x": 563,
-        "y": 222,
+        "x": 258,
+        "y": 216,
         "width": 50,
         "height": 50,
         "fill": "#000",
-        "opacity": 0.55,
+        "opacity": 0.4,
         "id_s": 0,
-        "name": "klo",
-        "status": "fertig",
-        "frist": "25.06.2016",
-        "person": "hans",
+        "parent_id": 0,
+        "name": "Behinderte vergasen",
+        "Frist": "",
+        "Status": "",
+        "Stunden": "",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -19,7 +20,57 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "ProjektMojekt2",
+            "text": "Behinderte vergasen",
+            "fill": "#F00"
+        }
+    },
+    "1": {
+        "x": 50,
+        "y": 150,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.4,
+        "id_s": 1,
+        "parent_id": 0,
+        "name": "Dumme Töten",
+        "Frist": "",
+        "Status": "",
+        "Stunden": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "Dumme Töten",
+            "fill": "#F00"
+        }
+    },
+    "2": {
+        "x": 50,
+        "y": 150,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.4,
+        "id_s": 2,
+        "parent_id": 1,
+        "name": "Türken los werden",
+        "Frist": "",
+        "Status": "",
+        "Stunden": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "Türken los werden",
             "fill": "#F00"
         }
     }

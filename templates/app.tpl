@@ -111,7 +111,7 @@
 			    <div class="uk-form-row">
 			        <label class="uk-form-label" for="">Status</label>
 			        <div class="uk-form-controls">
-			        	<input type="text" placeholder="Status" class="uk-width-1-1" name="Status">
+			        	<input type="text" placeholder="Status" class="uk-width-1-1" name="Status">St
 			        </div>
 			    </div>
 			    <div class="uk-form-row">
@@ -253,4 +253,33 @@
 			     </div>
 			</form>
     </div>
+</div>
+
+
+
+<!--Aufgaben Übersicht-->
+
+<div id="add_aufgabe_vie_modal" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header"><p>Aufgaben Übersicht</p></div>
+
+		<div class="uk-modal-page"></div>
+
+	</div>
+</div>
+
+
+<!--Personen Übersicht-->
+
+<div id="add_person_vie_modal" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+       
+		<div class="uk-modal-header"><p>Person Übersicht</p></div>
+
+		<div class="uk-modal-page"></div>
+
+	</div>
 </div>

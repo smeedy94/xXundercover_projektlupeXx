@@ -1,14 +1,14 @@
 APP.zoom2_cl = Class.create({
 //------------------------------------------------------------------------------
    initialize: function (can) {
-         this.model_aufgabe = new APP.zoom2_aufgabe_mpde_cl();
-         this.model_person = new APP.zoom2_person_mpde_cl();
          this.akt_o = null;
          this.canvas = can;
          this.scene = can.scenes.create("zoom2", function(){});
 
          //alle Obejekte die angelegt werden, werdne hier referenziert
          this.items={};
+
+         this.modelData = new APP.model_data_cl();
 
 
          APP.es_o.subscribe_px(this, 'zoom2');
@@ -17,20 +17,38 @@ APP.zoom2_cl = Class.create({
      
       switch(data_apl[0]){
          case 'add':
-            this.openModel('add');
+            if (this.aufson == "Aufgabe")
+              this.openModelAufgabe('add');
+            else
+              this.openModelPerson('add');
             break;
          case 'save':
-            this.addBox2(data_apl[1])
+            if (this.aufson == "Aufgabe")
+                this.addBoxAufgabe(data_apl[1])
+            else
+                this.addBoxPerson(data_apl[1])
             break;
          case 'delete':
             this.delete();
             break;
          case 'edit':
-            this.openModel('edit');
+         if(this.aufson == "Aufgabe")
+            this.openModelAufgabe('edit');
+         else
+            this.openModelPerson('edit');
             break;
          case 'update':
             this.updateBox(data_apl[1]);
             break; 
+        case 'aufgabe':
+            this.model = new APP.zoom2_aufgabe_mpde_cl();
+            this.aufson = "Aufgabe";
+            break;
+        case 'person':
+            this.model = new APP.zoom2_person_mpde_cl();
+            this.aufson = "Person";
+            break;
+
 
       }
 
@@ -53,14 +71,16 @@ APP.zoom2_cl = Class.create({
    render_px: function (data_opl) {
       this.parent_id=data_opl;
 
+
+
       this.loadBox(data_opl);
 
-      $("#zoomStateText").html("Zoom 2");
+      $("#zoomStateText").html("Zoom 2 " + this.aufson);
       this.canvas.scenes.load("zoom2");
       this.createEventHandler_p();
    },
    loadBox:function(id){
-      var data = this.model_zoom2_aufgabe.getData(id);
+      var data = this.model.getData(id);
 
       for (var x in data){
          var box = this.canvas.display.rectangle(data[x]);
@@ -98,8 +118,8 @@ APP.zoom2_cl = Class.create({
       APP.es_o.publish_px('ui', ['dis']);
       this.akt_o=null;
    },
-     addBox: function(data_apl){
-      var next_id = APP.db_o.getNextId("data/aufgabe.json");
+    addBoxAufgabe: function(data_apl){
+      var nextid = this.model.getnextid();
       var name = data_apl[0]['value'];
       var Frist = data_apl[1]['value'];
       var Status = data_apl[2]['value'];
@@ -109,10 +129,9 @@ APP.zoom2_cl = Class.create({
           y: 150, 
           width: 50, 
           height: 50, 
-          fill: color,
+          fill: "#000",
           opacity: 0.40,
-          id_s:next_id,
-          cir_id:cir_id,
+          id_s:nextid,
           parent_id:this.parent_id,
           name:name,
           Frist:Frist,
@@ -131,6 +150,50 @@ APP.zoom2_cl = Class.create({
       var box = this.canvas.display.rectangle(conf);
       var text = this.canvas.display.text( conf.text_c );
 
+      that2 = this;
+      box.dragAndDrop({
+         start: this.select,
+         end: this.updateBoxPos
+      });
+
+      box.addChild(text);
+      box['text_o'] = text;
+      this.scene.add(box);
+
+      this.items[box.id_s] = box;
+
+      this.model.addBox(box.id_s, conf);
+   },
+    addBoxPerson: function(data_apl){
+      var nextid = this.model.getnextid();
+      var name = data_apl[0]['value'];
+      var alter = data_apl[1]['value'];
+      var position = data_apl[2]['value'];
+      var conf = {
+          x: 50, 
+          y: 150, 
+          width: 50, 
+          height: 50, 
+          fill: '#000',
+          opacity: 0.40,
+          id_s:nextid,
+
+          parent_id:this.parent_id,
+          name:name,
+          alter:alter,
+          position:position,
+          text_c: {
+            x: 25,
+            y: 65,
+            origin: { x: "center", y: "bottom" },
+            font: "bold 15px sans-serif",
+            text: name,
+            fill: "#F00"
+          }
+      };
+      
+      var box = this.canvas.display.rectangle(conf);
+      var text = this.canvas.display.text( conf.text_c );
 
       that2 = this;
       box.dragAndDrop({
@@ -160,7 +223,7 @@ APP.zoom2_cl = Class.create({
       this.canvas.redraw();
 
    },
-   openModel: function(case_s){
+   openModelAufgabe: function(case_s){
       var modal = UIkit.modal("#add_aufgabe_modal");
       if(case_s=='add'){
          $("#add_aufgabe_modal .uk-modal-header").html('Aufgabe hinzufügen');
@@ -177,6 +240,57 @@ APP.zoom2_cl = Class.create({
              modal.show();
       }
     },
+    openModelPerson: function(case_s){
+      var modal = UIkit.modal("#add_person_modal");
+      if(case_s=='add'){
+         $("#add_person_modal .uk-modal-header").html('Person hinzufügen');
+         $("#add_person_modal #editbtninform").hide();
+         $("#add_person_modal #addbtninform").show();
+      }else{
+         $("#add_person_modal .uk-modal-header").html('Person bearbeiten');
+         $("#add_person_modal #editbtninform").show();
+         $("#add_person_modal #addbtninform").hide();
+      }
+      if ( modal.isActive() ) {
+             modal.hide();
+      } else {
+             modal.show();
+      }
+    },
+    openModelPersondetail: function(case_s){
+      if(this.akt_o == null){
+        UIkit.notify("Bitte wählen sie eine Person aus!");
+        return false;
+      }
+
+     var data = this.modelData.getDataPerson(this.akt_o.id_s);
+     console.log(data);
+     var markup_s = APP.tm_o.execute_px('person.tpl',data );
+
+
+      $('#add_person_vie_modal .uk-modal-page').html(markup_s);
+
+      UIkit.modal("#add_person_vie_modal").show();
+
+    },
+
+
+    openModelAufgabedetail: function(case_s){
+      if(this.akt_o == null){
+        UIkit.notify("Bitte wählen sie eine Aufgabe aus!");
+        return false;
+      }
+
+     var data = this.modelData.getDataAufgabe(this.akt_o.id_s);
+     console.log(data);
+     var markup_s = APP.tm_o.execute_px('aufgabe.tpl',data );
+
+
+      $('#add_aufgabe_vie_modal .uk-modal-page').html(markup_s);
+
+      UIkit.modal("#add_aufgabe_vie_modal").show();
+
+    },
   onClick: function(event_opl){
          var action = $(event_opl.target).attr("data-action");
             event_opl.preventDefault();
@@ -186,7 +300,11 @@ APP.zoom2_cl = Class.create({
           APP.es_o.publish_px('zoom2', ['add',null]);
           break;
         case 'edit':
+         if (this.aufson == "Aufgabe")
             var data = $("#add_aufgabe_modal form").serializeArray();
+          else
+            var data = $("#add_person_modal form").serializeArray();
+
             APP.es_o.publish_px('zoom2', ['edit',data]);
           break;
         case 'delete':
@@ -196,42 +314,46 @@ APP.zoom2_cl = Class.create({
           APP.es_o.publish_px('app_cont', ['out']);
           break;
         case 'in':
-          APP.es_o.publish_px('app_cont', ['in']);
+          if(this.aufson == "Aufgabe")
+            this.openModelAufgabedetail();
+          else
+            this.openModelPersondetail();
           break;
         case 'close':
           window.close();
           break;
          case 'save':
+         if (this.aufson == "Aufgabe")
             var data = $("#add_aufgabe_modal form").serializeArray();
+          else
+            var data = $("#add_person_modal form").serializeArray();
+
             APP.es_o.publish_px('zoom2', ['save',data]);
             break;
          case 'update':
+          if (this.aufson == "Aufgabe")
             var data = $("#add_aufgabe_modal form").serializeArray();
+          else
+            var data = $("#add_person_modal form").serializeArray();
+
             APP.es_o.publish_px('zoom2', ['update',data]);
             break;
       }
    },
-   // onClick2:function(event_opl){
-   //  var action = $(event_opl.target).attr("data-action");
-   //  event_opl.preventDefault();
-   //  switch(action){
-   //    case 'save':
-   //      var data = $("#add_workgrp_modal form").serializeArray();
-   //      this.addBox(data);
-   //      break;
-
-   //  }
-   // },
    createEventHandler_p:function(){
       $("#header button").on('click', this.onClick.bind(this));
-      $("#add_aufgabe_modal").on('click','button', this.onClick.bind(this));
-      // $("#add_person_modal").on('click','button', this.onClick2.bind(this));
+      if (this.aufson == "Aufgabe")
+        $("#add_aufgabe_modal").on('click','button', this.onClick.bind(this));
+      else
+        $("#add_person_modal").on('click','button', this.onClick.bind(this));
 
    },
    destroyEventHandler_p:function(){
       $("#header button").off();
-      $("#add_aufgabe_modal").off();
-      // $("#add_person_modal").off();
+      if (this.aufson == "Aufgabe")
+        $("#add_aufgabe_modal").off(this.onclick);
+      else
+        $("#add_person_modal").off(this.onclick);
    }
 
 });

@@ -1,15 +1,16 @@
 {
     "0": {
-        "x": 563,
-        "y": 222,
+        "x": 566,
+        "y": 221,
         "width": 50,
         "height": 50,
         "fill": "#000",
-        "opacity": 0.55,
+        "opacity": 0.4,
         "id_s": 0,
-        "name": "hans",
-        "alter": "5",
-        "position": "boss",
+        "parent_id": 0,
+        "name": "Florian Ellinghaus",
+        "alter": "",
+        "position": "",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -18,7 +19,31 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "ProjektMojekt2",
+            "text": "Florian Ellinghaus",
+            "fill": "#F00"
+        }
+    },
+    "1": {
+        "x": 384,
+        "y": 194,
+        "width": 50,
+        "height": 50,
+        "fill": "#000",
+        "opacity": 0.4,
+        "id_s": 1,
+        "parent_id": 0,
+        "name": "Hitler",
+        "alter": "",
+        "position": "",
+        "text_c": {
+            "x": 25,
+            "y": 65,
+            "origin": {
+                "x": "center",
+                "y": "bottom"
+            },
+            "font": "bold 15px sans-serif",
+            "text": "Hitler",
             "fill": "#F00"
         }
     }

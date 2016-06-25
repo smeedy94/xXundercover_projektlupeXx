@@ -3,12 +3,12 @@
         "x": 50,
         "y": 730,
         "radius": 30,
-        "fill": "#800080",
+        "fill": "#804000",
         "opacity": 0.5,
         "id_s": 0,
         "parent_id": 0,
-        "name": "1",
-        "fachbereich": "IT",
+        "name": "SS",
+        "fachbereich": "",
         "text_c": {
             "x": 0,
             "y": 50,
@@ -17,95 +17,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "1",
-            "fill": "#F00"
-        }
-    },
-    "1": {
-        "x": 150,
-        "y": 730,
-        "radius": 30,
-        "fill": "#80ff00",
-        "opacity": 0.5,
-        "id_s": 1,
-        "parent_id": 0,
-        "name": "2",
-        "fachbereich": "Mathe",
-        "text_c": {
-            "x": 0,
-            "y": 50,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "2",
-            "fill": "#F00"
-        }
-    },
-    "2": {
-        "x": 250,
-        "y": 730,
-        "radius": 30,
-        "fill": "#000000",
-        "opacity": 0.5,
-        "id_s": 2,
-        "parent_id": 0,
-        "name": "asdads",
-        "fachbereich": "asdads",
-        "text_c": {
-            "x": 0,
-            "y": 50,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "asdads",
-            "fill": "#F00"
-        }
-    },
-    "3": {
-        "x": 350,
-        "y": 730,
-        "radius": 30,
-        "fill": "#000000",
-        "opacity": 0.5,
-        "id_s": 3,
-        "parent_id": 0,
-        "name": "asdasdad",
-        "fachbereich": "asdsad",
-        "text_c": {
-            "x": 0,
-            "y": 50,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "asdasdad",
-            "fill": "#F00"
-        }
-    },
-    "4": {
-        "x": 450,
-        "y": 730,
-        "radius": 30,
-        "fill": "#ff0080",
-        "opacity": 0.5,
-        "id_s": 4,
-        "parent_id": 0,
-        "name": "asjdhalsikdhkas",
-        "fachbereich": "alöädölaksjndf",
-        "text_c": {
-            "x": 0,
-            "y": 50,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "asjdhalsikdhkas",
+            "text": "SS",
             "fill": "#F00"
         }
     }

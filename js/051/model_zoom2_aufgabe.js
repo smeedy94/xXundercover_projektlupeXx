@@ -39,24 +39,17 @@ APP.zoom2_aufgabe_mpde_cl = Class.create({
     delete this.data_o[id];
     APP.db_o.execute_px("POST","data/aufgabe.json",this.data_o);
   },
-  getData:function(){
-    return this.data_o;
+  getData:function(id){
+    var list_r = {};
+    for(var x in this.data_o){
+       if (id == this.data_o[x].parent_id)
+        list_r[x]=this.data_o[x];
+     }
+        return list_r;
   },
-  
-    getData2:function(id){
-    var sel={};
-
-    for (var x in this.data_o2){
-      if(this.data_o2[x]['parent_id'] == id){
-        sel[x] = this.data_o2[x];
-      }
-    }
-    console.log(sel);
-
-
-    return sel;
+  getnextid:function(){
+    var next_id = APP.db_o.getNextId("data/aufgabe.json");
+    return next_id;
   }
-
-
-
+  
 });

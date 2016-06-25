@@ -7,25 +7,6 @@
 // Zusammenfassung UI-spezifische Klassen
 //------------------------------------------------------------------------------
 
-
-//------------------------------------------------------------------------------
-// APP.EmptyContent_cl = Class.create({
-// //------------------------------------------------------------------------------
-//    initialize: function () {
-//    },
-//    notify_px: function (self_opl, message_spl, data_apl) {
-//    },
-//    canClose_px: function () {
-//       return true;
-//    },
-//    close_px: function () {
-//    },
-//    render_px: function (data_opl) {
-//    }
-// });
-// EOF
-
-
 APP.appUI_cl = Class.create({
 
 	initialize: function () {

@@ -66,7 +66,8 @@ APP.appController_cl = Class.create({
          {
          this.zoom_o[this.zoomState].close_px();
    		this.zoomState--;
-         this.zoom_o[this.zoomState].render_px();
+         var prev_id = this.zoom_o[this.zoomState].parent_id;
+         this.zoom_o[this.zoomState].render_px(prev_id);
         }
  }
 

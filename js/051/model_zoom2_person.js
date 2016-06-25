@@ -39,17 +39,18 @@ APP.zoom2_person_mpde_cl = Class.create({
     APP.db_o.execute_px("POST","data/person.json",this.data_o);
   },
 getData:function(id){
-   var sel={};
-
-    for (var x in this.data_o){
-      if(this.data_o[x]['parent_id'] == id){
-        sel[x] = this.data_o[x];
-      }
-    }
-    console.log(sel);
-
-
-    return sel;
+  
+    var list_r = {};
+    for(var x in this.data_o){
+       if (id == this.data_o[x].parent_id)
+        list_r[x]=this.data_o[x];
+     }
+        return list_r;
+  
+  },
+  getnextid:function(){
+    var next_id = APP.db_o.getNextId("data/person.json");
+    return next_id;
   }
 
 });

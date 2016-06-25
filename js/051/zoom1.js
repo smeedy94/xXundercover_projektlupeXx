@@ -194,6 +194,7 @@ APP.zoom1_cl = Class.create({
           Frist:Frist,
           Status:Status,
           Stunden:Stunden,
+          aufgaben_d:{},
           
 
           text_c: {
@@ -227,15 +228,9 @@ APP.zoom1_cl = Class.create({
    addBox2: function(data_apl){
 
       var next_id = APP.db_o.getNextId("data/personal.json");
-
-
       var name=data_apl[0]['value'];
       var fachbereich=data_apl[1]['value'];
       var color= data_apl[2]['value'];
-      
-
-
-      //berechnung der position
       var x = 50;
       for (var item in this.items2)
         x += 100;
@@ -250,10 +245,6 @@ APP.zoom1_cl = Class.create({
           parent_id:this.parent_id,
           name:name,
           fachbereich:fachbereich,
-
-
-
-
           text_c: {
             x: 0,
             y: 50,
@@ -330,6 +321,11 @@ APP.zoom1_cl = Class.create({
           
           break;
         case 'in':
+          if (this.isbox())
+              APP.es_o.publish_px('zoom2', ['aufgabe']);
+          else
+              APP.es_o.publish_px('zoom2', ['person']);
+
           APP.es_o.publish_px('app_cont', ['in']);
           break;
 
@@ -354,7 +350,6 @@ APP.zoom1_cl = Class.create({
         var data = $("#add_workgrp_modal form").serializeArray();
         this.addBox(data);
         break;
-
     }
    },
    createEventHandler_p:function(){
@@ -365,8 +360,8 @@ APP.zoom1_cl = Class.create({
    },
    destroyEventHandler_p:function(){
       $("#header button").off();
-      $("#add_personal_modal").off();
-      $("#add_workgrp_modal").off();
+      $("#add_personal_modal").off(this.onclick);
+      $("#add_workgrp_modal").off(this.onclick2);
    }
 
 });

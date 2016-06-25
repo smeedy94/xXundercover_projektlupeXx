@@ -1,18 +1,19 @@
 {
     "0": {
-        "x": 337,
-        "y": 186,
+        "x": 126,
+        "y": 184,
         "width": 50,
         "height": 50,
-        "fill": "#800080",
+        "fill": "#804000",
         "opacity": 0.4,
         "id_s": 0,
         "cir_id": 0,
         "parent_id": 0,
-        "name": "aysd",
-        "Frist": "ads",
+        "name": "Buchenwald",
+        "Frist": "",
         "Status": "",
         "Stunden": "",
+        "aufgaben_d": {},
         "text_c": {
             "x": 25,
             "y": 65,
@@ -21,76 +22,25 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "aysd",
+            "text": "Buchenwald",
             "fill": "#F00"
         }
     },
     "1": {
-        "x": 52,
-        "y": 72,
+        "x": 482,
+        "y": 226,
         "width": 50,
         "height": 50,
-        "fill": "#80ff00",
+        "fill": "#804000",
         "opacity": 0.4,
         "id_s": 1,
-        "cir_id": 1,
+        "cir_id": 0,
         "parent_id": 0,
-        "name": "aysdasdds",
-        "Frist": "ads",
-        "Status": "",
-        "Stunden": "",
-        "text_c": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "aysdasdds",
-            "fill": "#F00"
-        }
-    },
-    "2": {
-        "x": 51,
-        "y": 151,
-        "width": 50,
-        "height": 50,
-        "fill": "#80ff00",
-        "opacity": 0.4,
-        "id_s": 2,
-        "cir_id": 1,
-        "parent_id": 0,
-        "name": "asd",
-        "Frist": "asd",
-        "Status": "",
-        "Stunden": "",
-        "text_c": {
-            "x": 25,
-            "y": 65,
-            "origin": {
-                "x": "center",
-                "y": "bottom"
-            },
-            "font": "bold 15px sans-serif",
-            "text": "asd",
-            "fill": "#F00"
-        }
-    },
-    "3": {
-        "x": 448,
-        "y": 140,
-        "width": 50,
-        "height": 50,
-        "fill": "#ff0080",
-        "opacity": 0.4,
-        "id_s": 3,
-        "cir_id": 4,
-        "parent_id": 0,
-        "name": "456",
+        "name": "Dritten Weltkrieg mal gewinnen",
         "Frist": "",
-        "Status": "s",
+        "Status": "",
         "Stunden": "",
+        "aufgaben_d": {},
         "text_c": {
             "x": 25,
             "y": 65,
@@ -99,7 +49,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "456",
+            "text": "Dritten Weltkrieg mal gewinnen",
             "fill": "#F00"
         }
     }

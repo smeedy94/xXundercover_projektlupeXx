@@ -1,16 +1,16 @@
 {
     "0": {
-        "x": 563,
-        "y": 222,
+        "x": 302,
+        "y": 246,
         "width": 50,
         "height": 50,
         "fill": "#000",
         "opacity": 0.55,
         "id_s": 0,
-        "name": "ProjektMojekt2",
-        "auftraggeber": "Ich",
-        "frist": "Morgeb",
-        "kosten": "A",
+        "name": "Gas the Jews",
+        "auftraggeber": "",
+        "frist": "",
+        "kosten": "",
         "text_c": {
             "x": 25,
             "y": 65,
@@ -19,7 +19,7 @@
                 "y": "bottom"
             },
             "font": "bold 15px sans-serif",
-            "text": "ProjektMojekt2",
+            "text": "Gas the Jews",
             "fill": "#F00"
         }
     }
