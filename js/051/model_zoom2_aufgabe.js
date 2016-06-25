@@ -41,8 +41,21 @@ APP.zoom2_aufgabe_mpde_cl = Class.create({
   },
   getData:function(){
     return this.data_o;
-  }
+  },
   
+    getData2:function(id){
+    var sel={};
+
+    for (var x in this.data_o2){
+      if(this.data_o2[x]['parent_id'] == id){
+        sel[x] = this.data_o2[x];
+      }
+    }
+    console.log(sel);
+
+
+    return sel;
+  }
 
 
 

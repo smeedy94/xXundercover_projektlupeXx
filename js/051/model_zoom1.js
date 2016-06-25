@@ -74,6 +74,4 @@ APP.zoom1_mpde_cl = Class.create({
     return sel;
   }
 
-
-
 });

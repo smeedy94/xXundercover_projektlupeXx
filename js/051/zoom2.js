@@ -60,7 +60,7 @@ APP.zoom2_cl = Class.create({
       this.createEventHandler_p();
    },
    loadBox:function(id){
-      var data = this.model.getData(id);
+      var data = this.model_zoom2_aufgabe.getData(id);
 
       for (var x in data){
          var box = this.canvas.display.rectangle(data[x]);
